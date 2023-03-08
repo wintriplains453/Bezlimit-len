@@ -1,0 +1,10 @@
+//variables
+$size: calc(1vw + 1vh);
+$size-logo: calc(4vw + 4vh);
+
+//Size text
+@function size_mode($value) {
+    @return calc(#{$size} * #{$value});
+}
+
+

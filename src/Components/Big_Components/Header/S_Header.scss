@@ -1,0 +1,31 @@
+@import 'src/g_variable.scss';
+
+.menu__wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: space-around;
+    align-items: center;
+    li {
+        font-size: size_mode(0.8);
+        list-style: none;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+.logo {
+    background-image: url(../../../Assets/Images/logo_header.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    // border: 1px solid #000;
+    border-radius: 100%;
+    width: $size-logo;
+    height: $size-logo;
+    position: relative;
+    z-index: 2;
+    transform: translateY(10px) scale(1.1);
+}

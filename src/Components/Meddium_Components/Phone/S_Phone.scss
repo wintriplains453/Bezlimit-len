@@ -1,0 +1,25 @@
+@import 'src/g_variable.scss';
+
+.phone__wrapper {
+    position: relative;
+    height: 80vh;
+    width: 40vh;
+}
+.phone__screen {
+    height: 98%;
+    background: #fff;
+    position: absolute;
+    width: 98%;
+    border-radius: 20%;
+    transform: translate(1%, 1%);
+}
+.phone__area {
+    background-image: url(../../../Assets/Images/area_phone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;    
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
