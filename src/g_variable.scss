@@ -1,0 +1,33 @@
+//variables
+
+//__SIZE__
+$size: calc(1vw + 1vh);
+$size-logo: calc(4vw + 4vh);
+
+//__COLORS__
+$purple__opacity: #6833AD;
+$gold: #EEE0AB;
+
+//Size text
+@function size_mode($value) {
+    @return calc(#{$size} * #{$value});
+}
+
+//FONTS
+@font-face {
+    font-family: 'Ubunto_normal';
+    font-style: normal;
+    font-weight: normal;
+    src: url(./Fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+    font-family: 'Ubunto_bold';
+    src: url(./Fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'FuturaPT';
+    font-style: normal;
+    font-weight: normal;
+    src: url(./Fonts/FuturaPT-ExtraBold.ttf);
+}

@@ -1,0 +1,35 @@
+@import 'src/g_variable.scss';
+
+.menu__wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background: rgba($color: $purple__opacity, $alpha: 0.3);
+    justify-content: space-around;
+    align-items: center;
+    a {
+        font-size: size_mode(0.8);
+        list-style: none;
+        cursor: pointer;
+        color: #fff;
+    }
+    li {
+        list-style: none;
+    }
+}
+.logo {
+    background-image: url(../../../Assets/Images/logo_header.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    // border: 1px solid #000;
+    border-radius: 100%;
+    width: $size-logo;
+    height: $size-logo;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -80px) scale(1.1);
+}

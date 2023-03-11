@@ -1,0 +1,130 @@
+@import 'src/g_variable.scss';
+
+.phone__wrapper {
+    position: relative;
+    height: 80vh;
+    width: 40vh;
+    overflow: hidden;
+    z-index: 3;
+}
+.phone__screen {
+    height: 98%;
+    background: #fff;
+    position: absolute;
+    width: 98%;
+    border-radius: 20%;
+    transform: translate(1%, 1%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .phone__screen_menu {
+        background: #ededed;
+        height: 50px;
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0;
+    }
+}
+.phone__area {
+    background-image: url(../../../Assets/Images/area_phone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;    
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .phone__area_wrapper {
+        padding: 20px;
+        .phone__area_menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+            height: 40px;
+        }
+    }
+}
+.phone__bar_wrapper {
+    width: 100%;
+    height: 30px;    
+    background: $purple__opacity;
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    z-index: 3;
+}
+.phone__bar {
+    max-width: 90%;
+    height: 100%;
+    background-image: url(../../../Assets/svg/status_bar.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+}
+.phone__area_menu p {
+    font-size: size_mode(0.7);
+    cursor: pointer;
+    transition: .4s;
+    color: #000;
+    &:hover {
+        color: #814197;
+    }
+}
+.List_PhonesTarifs {
+    overflow-y: scroll;
+    height: 60vh;
+    // background: #fff;
+}
+.List_PhonesTarifs::-webkit-scrollbar {
+    width: 4px;       
+}
+.List_PhonesTarifs::-webkit-scrollbar-thumb {
+    background-color: purple;
+}
+.Modal_phone {
+    position: absolute;
+    left: 10%;
+    top: 100px;
+    width: 80%;
+    height: 250px;
+    z-index: 2;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: #fff;
+}
+.item_phone {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+.item_phone_number {
+    font-family: 'Ubunto_normal';
+}
+.item_phone_tarif { 
+    font-size: .8rem;
+    // opacity: .5;
+    cursor: pointer;
+    color: #814197;
+}
+.custom_item_button {
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: .9rem;
+}
+.Custom_black_screen_wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 72vh;
+    background: rgba($color: #000000, $alpha: 0.5);
+}

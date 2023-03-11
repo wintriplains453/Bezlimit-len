@@ -1,0 +1,130 @@
+@import 'src/g_variable.scss';
+
+
+.FormBlock__wrapper {
+    background-image: url(../../../Assets/Images/background_form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+        background: rgba($color: $purple__opacity, $alpha: 0.3);
+        width: 100%;
+        height: 50px;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+        background: rgba($color: #9888AD, $alpha: 0.3);
+        width: 100%;
+        height: 50px;
+        transform: rotate(180deg);
+    }
+    .lefttext__block {
+        color: #fff;
+        z-index: 2;
+        // letter-spacing: 3px;
+    }
+}
+.black_screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #000000, $alpha: 0.5);
+}
+
+.formblock__index {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.menu_formblock {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    li {
+        list-style: none;
+        font-size: size_mode(1.2);
+        font-family: 'Ubunto_bold';
+    }
+}
+
+.wrapper__form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background: transparent; 
+    .form_gold {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        position: absolute;
+        opacity: .5;
+        z-index: 1;
+    }
+}
+.Index_form {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+}
+.logo_form {
+    background-image: url(../../../Assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateY(-60%);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 80px;
+}
+
+.wrapper_content_form {
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .wrapper_content_form_header {
+        font-size: size_mode(1.6);
+        font-family: 'Ubunto_bold';
+    }
+}
+.InputForm {
+    margin-top: 20px;
+    outline: none;
+    border: 1px solid $gold;
+    background: transparent;
+    padding: 5px;
+    width: 50%;
+    color: #fff;
+    font-family: 'Ubunto_normal';
+    font-size: size_mode(1.1);
+    text-align: center;
+}
