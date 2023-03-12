@@ -10,14 +10,11 @@
     background: rgba($color: $purple__opacity, $alpha: 0.3);
     justify-content: space-around;
     align-items: center;
-    a {
+    li {
         font-size: size_mode(0.8);
         list-style: none;
         cursor: pointer;
         color: #fff;
-    }
-    li {
-        list-style: none;
     }
 }
 .logo {

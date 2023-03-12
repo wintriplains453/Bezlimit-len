@@ -19,12 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-body::-webkit-scrollbar {
-  width: 8px;       
-}
-body::-webkit-scrollbar-thumb {
-  background-color: purple;
+  scroll-behavior: smooth;
 }
 
 code {

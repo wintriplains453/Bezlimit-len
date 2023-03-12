@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState} from 'react';
-// import useLocalScroll from './hooks/useLocalScroll';
+import LocomotiveScroll from 'locomotive-scroll';
+import "locomotive-scroll/src/locomotive-scroll.scss"
 // import gsap from 'gsap'
 
 //Big_Components
@@ -19,19 +20,45 @@ import './App.scss';
 
 function App() {
   const [preloader, setPreloader] = useState(true);
+  const [NlocoScroll, setNlocoScroll] = useState(null);
 
-  // useLocalScroll(preloader);
+  useEffect(() => {
+    if(preloader) return;
 
-  const [timer, setTimer] = useState(0);
+    const scrollEl = document.querySelector("#main-container");
+
+    let locoScroll = new LocomotiveScroll({
+        el: scrollEl,
+        smooth: true,
+        multiplier: 1,
+        class: "is-reveal"
+    })
+    setNlocoScroll(locoScroll)
+  }, [preloader])
+
+  function callbackMenu(item) {
+    switch(item) {
+      case 1:
+        NlocoScroll.scrollTo("#job");
+        break;
+      case 2: 
+        NlocoScroll.scrollTo("#form");
+        break;
+      case 3:
+        NlocoScroll.scrollTo("#QuastionAnswer");
+        break;
+      case 4:
+        NlocoScroll.scrollTo("#footer");
+        break;
+      default:
+        NlocoScroll.scrollTo("#main")
+        break;
+    }
+  }
+
+  const [timer, setTimer] = useState(2);
 
   const id = useRef(null)
-  const [idQuastionAnswer,] = useState({
-    idQuastionAnswer: "idQuastionAnswer",
-    idfooter: "idfooter",
-    idmain: "idmain",
-    idjob: "idJob",
-    idform: "idform"
-  });
 
   const clear = () => {
     window.clearInterval(id.current);
@@ -68,8 +95,8 @@ function App() {
             </div>
 
             <section className="myindex__content" data-scroll-section>
-              <div id={idQuastionAnswer.idmain}>
-                <Header idQuastionAnswer={idQuastionAnswer}/>
+              <div id="main">
+                <Header callbackMenu={callbackMenu}/>
               </div>
               <div className='header__content'>
                 <div className='absolute__header__content_righttext'>
@@ -104,16 +131,16 @@ function App() {
               </div>     
               <div className='absolute__header__content_lefttext_copy'></div>   
             </section>    
-            <div id={idQuastionAnswer.idjob}>
+            <div id="job">
               <StartContent />
             </div>         
-            <div id={idQuastionAnswer.idform}>
+            <div id="form">
               <FormBlock />
             </div>
-            <div id={idQuastionAnswer.idQuastionAnswer}>
+            <div id="QuastionAnswer">
               <QuastionAnswer />
             </div>
-            <div id={idQuastionAnswer.idfooter}>
+            <div id="footer">
               <Footer />
             </div>
           </div>              

@@ -15,7 +15,7 @@ const Accordion = ({questionsAnswers}) => {
     <ul className="accordion">
       {true ?
         <>
-          {questionsAnswers.map((item, index) => (
+          {questionsAnswers.map((item) => (
               <AccordionItem
                 key={item.id}
                 onToggle={() => handleToggle(item.id)}

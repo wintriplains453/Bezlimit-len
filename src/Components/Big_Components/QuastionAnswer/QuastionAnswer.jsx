@@ -84,11 +84,11 @@ function QuastionAnswer() {
 	];
   return (
     <section className='wrapper_quastion_answer' data-scroll-section>
-			<div className='LineDefault custom_line'></div> 
-			<div className='lefttext__block'>Часто задаваемые вопросы</div> 
-			<div className="wrapper_accordion">
-				<Accordion questionsAnswers={questionsAnswers} />
-			</div>
+		<div className='LineDefault custom_line'></div> 
+		<div className='lefttext__block'>Часто задаваемые вопросы</div> 
+		<div className="wrapper_accordion">
+			<Accordion questionsAnswers={questionsAnswers} />
+		</div>
     </section>
   );
 }
