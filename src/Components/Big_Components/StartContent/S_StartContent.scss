@@ -55,3 +55,54 @@
     letter-spacing: 3px;
     word-spacing: 8px;
 }
+.wrapper_cards {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+article {
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 4fr 1fr 1fr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}
+.SC_Image {
+    object-fit: contain;
+    position: relative;
+    width: 27vh;
+    height: 17vw;
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+    &.is-reveal {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+.SC_Header {
+    font-size: size_mode(.9);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+.SC_Description {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+    font-size: size_mode(.6);
+    font-family: TildaSans, Arial, sans-serif;
+}
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: size_mode(2.5);
+    font-weight: 300;
+    color: #54BFE1;
+}
