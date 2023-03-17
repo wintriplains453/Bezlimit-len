@@ -1,4 +1,5 @@
 import React ,{ useRef } from "react";
+import { HiPlus } from "react-icons/hi2";
 
 const AccordionItem = ({ faq, active, onToggle }) => {
   const { question, answer } = faq;
@@ -8,7 +9,7 @@ const AccordionItem = ({ faq, active, onToggle }) => {
     <li className={`accordion_item ${active ? "active" : ""}`}>
       <button className="accordion_button" onClick={onToggle}>
         {question}
-        <span className="accordion_control">{active ? "-" : "+"} </span>
+        <span className="accordion_control"><HiPlus /></span>
       </button>
       <div
         ref={contentEl}

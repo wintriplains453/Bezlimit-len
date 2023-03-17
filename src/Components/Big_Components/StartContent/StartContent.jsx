@@ -13,6 +13,7 @@ function StartContent() {
     <section className='StartContent__wrapper' data-scroll-section>
       <div className='LineDefault custom_line'></div> 
       <div className='lefttext__block'>Как мы работаем</div> 
+      <h1 className='lefttext__block_header'>Как мы работаем</h1>
       <div className='wrapper_cards'>
         <div>
           <article>

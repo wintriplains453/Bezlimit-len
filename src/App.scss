@@ -86,11 +86,31 @@
     right: 30px;
     bottom: 0;
     padding: 20px;
+    padding-bottom: 80px;
     background: linear-gradient(45deg, rgba(246, 175, 71, 0.7),rgba(104, 51, 173, 0.7));
-    max-width: 300px;
+    max-width: 20%;
     min-height: 200px;
     color: #fff;
     transform: translateY(30px);
+}
+.absolute__header_topText {
+    position: absolute;
+    right: 100px;
+    top: 25%;
+    color: #fff;
+    background: transparent;
+}
+.topText__mainblock_header {
+    font-size: size_mode(.8);
+    max-width: 300px;
+    ul {
+        margin: 20px 0;
+    }
+    li {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+    }
 }
 .absolute__header__content_lefttext_copy {
     transform: translate(-10px, 20px);
@@ -120,20 +140,19 @@
 }
 .backgrond__video {
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    min-height: 870px;
+    display: block;
+    width: 100%;
+    max-width: 2560px;
     z-index: 0;
     overflow: hidden;
     video {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+        display: block;
+        position: relative;
+        margin: 0 auto;
         z-index: 0;
-        width: 100vw;
+        width: 100%;
     }
     .black__screen {
         position: absolute;
@@ -214,4 +233,113 @@
     top: 120px;
     height: 100%;
     width: 100px;
+}
+@media screen and (max-width: 1600px)  {
+    .backgrond__video video {
+        width: 125%;
+    }
+}
+@media screen and (max-width: 1024px)  {
+    .backgrond__video video {
+        // display: none;
+        width: 170%;
+        background: orange;
+    }
+    .wrapper__item_phone {
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+    .absolute__header__content_righttext {
+        max-width: 100%;
+    }
+    .linesParent {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 30px;
+        overflow: auto;
+        top: 0;
+        width: 100%;
+    }        
+    .righttext__vertical_text {
+        transform: rotate(0deg) translate(0, 0);
+        writing-mode: horizontal-tb;
+    }
+    .righttext__mainblock {
+        left: 0;
+    }
+    .righttext__mainblock_content {
+        max-width: 50%;
+        margin-left: 5px;
+    }
+    .righttext__mainblock .righttext__mainblock_header {
+        padding-left: 30px;
+    }
+    .absolute__header__content_lefttext, .absolute__header__content_lefttext_copy {
+        left: 30px;
+    }
+}
+@media screen and (max-width: 768px)  {
+    .absolute__header__content_lefttext, .absolute__header__content_lefttext_copy {
+        max-width: 25%;
+        min-height: none;
+    }
+}
+@media screen and (max-width: 750px)  {
+    .backgrond__video video {
+        display: none;
+    }
+}
+@media screen and (max-width: 650px)  {
+    .header__content {
+        background: gray;
+    }
+    .absolute__header__content_righttext {
+        position: relative;
+    }
+    .righttext__mainblock_content {
+        max-width: 100%;
+        p {
+            font-size: 1.6rem;
+        }
+    }
+    .righttext__mainblock .righttext__mainblock_content {
+        transform: translate(0);
+        p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+    }
+    .linesParent {
+        position: relative;
+        max-width: 80%;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+        .righttext__vertical_text {
+            width: 100%;
+        }
+    }
+    .righttext__mainblock {
+        top: 0;
+    }
+    .wrapper__item_phone {
+        margin-right: 0;
+        justify-content: center;
+    }
+    .absolute__header__content_lefttext {
+        position: relative;
+    }
+    .righttext__mainblock .righttext__mainblock_header {
+        text-align: center;
+        padding-left: 0;
+        transform: translate(0);
+        margin: 20px 0;
+    }
+    .absolute__header__content_lefttext, .absolute__header__content_lefttext_copy {
+        max-width: 80%;
+        min-height: 0;
+    }
+    .lefttext__mainblock_header p, .btnBaner {
+        font-size: 1.2rem !important;
+    }
 }

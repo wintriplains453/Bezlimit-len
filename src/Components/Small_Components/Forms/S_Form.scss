@@ -1,0 +1,75 @@
+@import 'src/g_variable.scss';
+
+.Attention_eight {
+    color: #ff5d5d;
+    margin-top: 30px;
+    font-size: size_mode(1);
+}
+.btn_send {
+    padding: 10px 20px;
+    margin-top: 30px;
+    width: 40%;
+    font-size: size_mode(1);
+}
+.wrap_number {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+.display_number {
+    border: 1px solid $gold;
+    margin: 0 5px;
+    width: 32px;
+    height: 58px;
+    padding: 2px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    position: relative;
+}
+.input_number {
+    position: absolute;
+    border: none;
+    font-size: 32px;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+.special_symbolPhone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    font-size: 40px;
+}
+.special_symbolPhoneNone {
+    display: none;
+}
+.shadows {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 0 0 4px rgba($color: #6833AD, $alpha: 0.6);
+    padding: 2px;
+    border-radius: 5px;
+}
+.WrapperTarifs {
+    max-width: 80%;
+    margin: 10px auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.custom_btn_tarifs {
+    padding: 10px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    min-width: 100px;
+    border-radius: 10px;
+}

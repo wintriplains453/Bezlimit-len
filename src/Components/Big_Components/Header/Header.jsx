@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import './S_Header.scss'; 
 
 function Header({callbackMenu}) { 

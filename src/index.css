@@ -14,9 +14,7 @@ html, body, #root{
   height: 100%;
 }
 body {
-  font-family: Ubunto_normal, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Ubunto_normal, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -26,7 +24,7 @@ body::-webkit-scrollbar {
   background: #000;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background-color: #fff;
 }
 
 code {
@@ -41,6 +39,11 @@ code {
   cursor: pointer;
   border-radius: 20px;
   color: #000;
+  transition: .8s;
+}
+.btn:hover {
+  transition: .4s;
+  color: #fff; 
 }
 
 .LineDefault {
@@ -51,4 +54,13 @@ code {
   height: 100%;
   background: #fff;
   opacity: .3;
+}
+.attention {
+  color: #ff5d5d;
+}
+
+@media screen and (max-width: 1024px)  {
+  .LineDefault {
+    width: 0;
+  }
 }

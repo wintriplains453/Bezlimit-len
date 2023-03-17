@@ -22,6 +22,9 @@ import Phone from './Components/Meddium_Components/Phone/Phone';
 import VideoSRC from './Assets/videos/bezlimit_video2.mp4'
 import Logo from './Assets/Images/logo_header.png'
 
+//Icons
+// import { HiCheck } from "react-icons/hi2";
+
 import './App.scss';
 
 function App() {
@@ -63,6 +66,10 @@ function App() {
     }
   }
 
+  function callForm() {
+    NlocoScroll.scrollTo("#form");
+  }
+
   const [timerState, setTimer] = useState(2);
 
   const id = useRef(null)
@@ -75,7 +82,7 @@ function App() {
 
   useEffect(() => {
     id.current = window.setInterval(() => {
-      setTimer((timer) => timer - 1)
+      setTimer(0)
     }, 1000)
   }, [])
 
@@ -132,7 +139,7 @@ function App() {
 
       .to(word3.current, {duration: .4, delay: 0.1, x: 100 + "%", opacity: 1, ease: Power1.easeOut}, '<')
       .to(wrapper3.current, {duration: .4, delay: 0.1, opacity: 1, ease: Power1.easeOut}, '<')
-      .to(wrapper_phone.current, {duration: .5, opacity: 1, ease: Power1.easeIn}, '<')
+      gsap.to(wrapper_phone.current, {duration: .5, delay: 1.2, opacity: 1, ease: Power1.easeOut})
       gsap.to(animation_bezdesc.current, {
         duration: 1,
         opacity: 1,
@@ -197,19 +204,33 @@ function App() {
                 <div className='wrapper__item_phone' ref={wrapper_phone}>
                   <Phone />
                 </div>
-                <div className='LineDefault'></div>         
-              </div>             
-              <div className='absolute__header__content_lefttext'>
+                <div className='LineDefault'></div>  
+                <div className='absolute__header__content_lefttext'>
                 <div className='lefttext__mainblock'>
                   <div className='lefttext__mainblock_header'>
                     <p>Возьми красивый номер и сохрани свой. Это легко</p>
                   </div>
                   <div className='lefttext__mainblock_content'>
-                    <button className='btn btnBaner'>взять</button>
+                    <button className='btn btnBaner' onClick={callForm}>взять</button>
                   </div>
                 </div>
               </div>     
-              <div className='absolute__header__content_lefttext_copy'></div>   
+              <div className='absolute__header__content_lefttext_copy'></div>          
+              </div>  
+              {/* <div className='absolute__header_topText'>
+                <div className='ltopText__mainblock'>
+                  <div className='topText__mainblock_header'>
+                    <p>У нас есть несколько вариантов доставки:</p>
+                    <ul>
+                      <li><HiCheck /><p>курьером</p></li>
+                      <li><HiCheck /><p>через CDEK</p></li>
+                      <li><HiCheck /><p>почтой России</p></li>
+                    </ul>
+                    <p className='attention'>ВНИМАНИЕ! ДОСТАВКА БЕСПЛАТНАЯ!</p>
+                  </div>
+                </div>
+              </div>               */}
+
             </section>    
             <div id="job">
               <StartContent />
