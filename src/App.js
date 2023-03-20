@@ -14,6 +14,7 @@ import StartContent from './Components/Big_Components/StartContent/StartContent'
 import Footer from './Components/Big_Components/Footer/Footer';
 import FormBlock from './Components/Big_Components/FormBlock/FormBlock';
 import QuastionAnswer from './Components/Big_Components/QuastionAnswer/QuastionAnswer';
+import Tarifs from './Components/Big_Components/Tarifs/Tarif';
 
 //Meddium_Components
 import Phone from './Components/Meddium_Components/Phone/Phone';
@@ -26,11 +27,24 @@ import Logo from './Assets/Images/logo_header.png'
 // import { HiCheck } from "react-icons/hi2";
 
 import './App.scss';
+import WhyUs from './Components/Big_Components/WhyUs/WhyUs';
 
 function App() {
   gsap.registerPlugin(CSSPlugin)
   const [preloader, setPreloader] = useState(true);
   const [NlocoScroll, setNlocoScroll] = useState(null);
+
+  const tarifs = [
+		{id: 1, title: 590, minutes: 400, sms: 300, gb: 20},
+		{id: 2, title: 790, minutes: 700, sms: 300, gb: 30},
+		{id: 3, title: 1000, minutes: 700, sms: 300, gb: 30},
+		{id: 4, title: 1250, minutes: 900, sms: 300, gb: 30},
+		{id: 5, title: 1500, minutes: 900, sms: 300, gb: 40},
+		{id: 6, title: 2000, minutes: 2000, sms: 1000, gb: 50},
+		{id: 7, title: 2500, minutes: 5000, sms: 1000, gb: 60},
+		{id: 8, title: 3000, minutes: "Ꝏ", sms: 1000, gb: 60},
+		{id: 9, title: 4000, minutes: "Ꝏ", sms: 1000, gb: 60},
+	]
 
   useEffect(() => {
     if(preloader) return;
@@ -54,11 +68,20 @@ function App() {
       case 2: 
         NlocoScroll.scrollTo("#form");
         break;
-      case 3:
-        NlocoScroll.scrollTo("#QuastionAnswer");
+      case 3: 
+        NlocoScroll.scrollTo("#tarifs");
         break;
       case 4:
+        NlocoScroll.scrollTo("#QuastionAnswer");
+        break;
+      case 5:
         NlocoScroll.scrollTo("#footer");
+        break;
+      case 6: 
+        NlocoScroll.scrollTo("#form");
+        break;
+      case 7: 
+        NlocoScroll.scrollTo("#form");
         break;
       default:
         NlocoScroll.scrollTo("#main")
@@ -232,11 +255,17 @@ function App() {
               </div>               */}
 
             </section>    
+            <div id="whyus">
+              <WhyUs />
+            </div>
+            <div id="tarifs">
+              <Tarifs tarifs={tarifs}/>
+            </div>
             <div id="job">
               <StartContent />
             </div>         
             <div id="form">
-              <FormBlock />
+              <FormBlock tarifs={tarifs}/>
             </div>
             <div id="QuastionAnswer">
               <QuastionAnswer />

@@ -1,26 +1,13 @@
 import {React, useState, createRef} from "react";
 import './S_Form.scss';
 
-const FormReg = () => {
+const FormReg = ({tarifs}) => {
 	const[value, setValue] = useState("")
 	const[focused, setFocesed] = useState(false)
 
 	const CODE_LENGTH = new Array(10).fill(0);
 	const values = value;
 	let selectedIndex = values.length < CODE_LENGTH.length ? values.length : CODE_LENGTH.length - 1;
-
-	const tarifs = [
-		{id: 1, title: 590, minutes: 400, sms: 300, gb: 20},
-		{id: 2, title: 790, minutes: 700, sms: 300, gb: 30},
-		{id: 3, title: 1000, minutes: 700, sms: 300, gb: 30},
-		{id: 4, title: 1250, minutes: 900, sms: 300, gb: 30},
-		{id: 5, title: 1500, minutes: 900, sms: 300, gb: 40},
-		{id: 6, title: 2000, minutes: 2000, sms: 1000, gb: 50},
-		{id: 7, title: 2500, minutes: 5000, sms: 1000, gb: 60},
-		{id: 8, title: 3000, minutes: "∞", sms: 1000, gb: 60},
-		{id: 9, title: 4000, minutes: "∞", sms: 1000, gb: 60},
-	]
-
 
 	//REFS
 	const input = createRef()

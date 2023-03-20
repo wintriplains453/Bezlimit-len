@@ -7,7 +7,7 @@ import FormReg from '../../Small_Components/Forms/FormReg';
 //SCSS
 import './S_FormBlock.scss';
 
-function FormBlock() {
+function FormBlock({tarifs}) {
   const [active, setActive] = useState(1);
 
   function switchTab(item) {
@@ -37,7 +37,7 @@ function FormBlock() {
             {active === 1 ?
               <FormSearchPhone />
                :
-              <FormReg />
+              <FormReg tarifs={tarifs}/>
             }
           </div>
       </div>

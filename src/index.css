@@ -47,7 +47,7 @@ code {
 }
 
 .LineDefault {
-  width: 0.07px;
+  width: 1px;
   position: absolute;
   left: 27px;
   top: 0;
@@ -57,6 +57,11 @@ code {
 }
 .attention {
   color: #ff5d5d;
+}
+@media screen and (max-width: 1600px)  {
+  .LineDefault {
+    width: 0.07;
+  }
 }
 
 @media screen and (max-width: 1024px)  {

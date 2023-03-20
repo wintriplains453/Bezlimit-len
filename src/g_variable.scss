@@ -6,12 +6,34 @@ $size-logo: calc(4vw + 4vh);
 
 //__COLORS__
 $purple__opacity: #6833AD;
+$purple__opacity_hover: #4d2286;
 $gold: #EEE0AB;
 
 //Size text
 @function size_mode($value) {
     @return calc(#{$size} * #{$value});
 }
+
+.background_header {
+    background: $gold;
+    position: absolute;
+    transform: translateX(-100%) scale(1);
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+} 
+.background_header_Y {
+    background: $gold;
+    position: absolute;
+    transform: translateY(-100%) scale(1);
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+} 
 
 //FONTS
 @font-face {

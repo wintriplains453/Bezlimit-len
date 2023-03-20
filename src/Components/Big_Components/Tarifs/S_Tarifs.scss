@@ -1,0 +1,201 @@
+@import 'src/g_variable.scss';
+
+//variables
+$width-tarif_card: 30%;
+$height-tarif_card: 20%;
+
+.Tarifs__wrapper {
+  &:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+    background: rgba($color: #9888AD, $alpha: 0.3);
+    width: 100%;
+    height: 50px;
+    transform: rotate(180deg);
+  }
+  &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+      background: rgba($color: #9888AD, $alpha: 0.3);
+      width: 100%;
+      height: 50px;
+  }
+}
+.custom {
+  color: #fff;
+}
+.black_screen_tarif {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
+}
+
+.hero {
+    visibility: hidden;
+    background: linear-gradient(45deg, #B2AAD0, #7746BA);
+    background-image: url(../../../Assets/Images/tarif.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 100vh;
+    .container {
+      .hero-inner {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 2fr 3fr;
+        margin: 0 24px;
+        height: 100vh;
+        .hero-content {
+          width: 100%;
+          .hero-content-inner {
+            width: 400px;
+            color: #fff;
+            margin: 0 auto;
+            h1 {
+              font-weight: 500;
+              font-size: 32px;
+              margin-bottom: 24px;
+              .hero-content-line {
+                margin: 0;
+                height: 44px;
+                overflow: hidden;
+                .hero-content-line-inner {
+                }
+              }
+            }
+            p {
+              font-size: 14px;
+              line-height: 24px;
+              font-weight: 300;
+              padding-right: 48px;
+              margin-bottom: 56px;
+            }
+          }
+        }
+        .hero-images {
+          width: 100%;
+          height: 100vh;
+          position: relative;
+          .hero-images-inner {
+            .hero-image {
+              background: green;
+              position: absolute;
+              overflow: hidden; 
+              width: $width-tarif_card;
+              height: $height-tarif_card;   
+              background: transparent;
+              .blackSCreen {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba($color: $purple__opacity, $alpha: 0.8);
+                cursor: pointer;
+                // filter: blur(5px);
+              }
+              &.tarif590 {
+                top: $height-tarif_card * 2.3;
+                left: 0;
+                transform: translateX(-80px);
+              }
+              &.tarif790 {
+                top: $height-tarif_card * 2.3;
+                left: $width-tarif_card - 6;
+              }
+              &.tarif1000 {
+                width: $width-tarif_card + 3;
+                transform: translateX(-9%);
+                top: $height-tarif_card * 3.36;
+                left: $width-tarif_card - 6;
+              }
+              &.tarif1250 {
+                top: 5%;
+                left: $width-tarif_card + 16;
+                width: $width-tarif_card / 1.11;
+                transform: translateY(-5%);
+              }
+              &.tarif1500 {
+                top: $height-tarif_card - 7;
+                right: 0;
+                width: $width-tarif_card / 1.11;
+                transform: translateX(10px);
+              }
+              &.tarif2000 {
+                top: $height-tarif_card * 1.25;
+                left: $width-tarif_card + 16;
+                width: $width-tarif_card / 1.11;
+              }
+              &.tarif2500 {
+                bottom: $height-tarif_card * 2.3;
+                width: $width-tarif_card / 1.11;
+                transform: translateX(10px);
+                right: 0;
+              }
+              &.tarif3000 {
+                top: 5%;
+                left: 0;
+                width: $width-tarif_card * 1.5;
+                height: $height-tarif_card * 2;         
+              }
+              &.tarif4000 {
+                bottom: 5%;
+                right: 0;
+                width: $width-tarif_card * 1.5;
+                height: $height-tarif_card * 2; 
+              }
+              &.tarif4000 , &.tarif3000 {
+                .title_tarif {
+                  font-size: 4rem;
+              }                    
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.customBtn {
+  padding: 15px 50px;
+  opacity: 1 !important;
+}
+
+.wrapper_tarif_card_content {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: .4s;
+  .title_tarif {
+    font-size: 2rem;
+    color: $gold;
+  }
+  &:hover {
+    background: $purple__opacity_hover;
+  }
+}
+.tarif_content_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+
+}
+.tarif_month {
+  font-size: 1.5rem;
+  margin: 10px;
+}
