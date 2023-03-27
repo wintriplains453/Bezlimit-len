@@ -9,13 +9,18 @@
     padding: 10px 20px;
     margin-top: 30px;
     width: 40%;
-    font-size: size_mode(1);
+    font-size: size_mode(.6);
 }
 .wrap_number {
     display: inline-block;
     position: relative;
     display: flex;
-    margin-top: 10px;
+    margin-top: 50px;
+}
+.wrap_number_first {
+    color: $gold;
+    font-size: 3rem;
+    margin: 0 10px;
 }
 .display_number {
     border: 1px solid $gold;
@@ -43,7 +48,8 @@
     justify-content: center;
     align-items: center;
     width: 32px;
-    font-size: 40px;
+    font-size: 3rem;
+    color: $gold;
 }
 .special_symbolPhoneNone {
     display: none;
@@ -72,4 +78,138 @@
     font-size: 1.2rem;
     min-width: 100px;
     border-radius: 10px;
+}
+.WrapperTarifs_active {
+    box-shadow: 0 0 4px 4px $purple__opacity;
+    color: #fff;
+    font-weight: bold;
+}
+.PD_border {
+    border: 1px solid #fff;
+    padding: 10px;
+    background: rgba($color: #fff, $alpha: 0.2);
+    border-radius: 15px;
+    min-width: 70%;
+    padding-left: 50px;
+}
+.PD_area_inputs {
+    max-width: 80%;
+    margin-top: 20px;
+}
+.PD_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.PD__wrapper_item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left !important;
+    .PDI_title {
+        opacity: .8;
+    }
+    .PDI_title_tarif {
+        color: $gold;
+        font-weight: bold;
+    }
+    p {
+        text-align: left;
+    }
+}
+.FS_title {
+    font-size: 2rem;
+    max-width: 60%;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(141.08deg,#cbad59 25.79%,#e0d29a 63.66%,#b58f56 97.07%);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
+.wrapper_content_form input {
+    margin: 10px;
+    font-size: 1.5rem;
+    text-align: left;    
+    width: 100%;
+    box-sizing: border-box;
+}
+.PD_wrapper_title {
+    margin-bottom: 10px;
+    p {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .you_phone_title {
+        background: linear-gradient(141.08deg,#cbad59 25.79%,#e0d29a 63.66%,#b58f56 97.07%);
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;   
+    }
+}
+.PD_wrapper_inputs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+    color: rgba($color: #fff, $alpha: .5);
+    position: relative;
+}
+@media screen and (max-width: 1300px) {
+    .custom_btn_tarifs {
+        padding: 10px 20px;
+        margin: 8px;
+        font-size: 1.1rem;
+    }
+    .display_number {
+        height: 50px;
+        font-size: 30px;
+        margin: 0 3px;
+    }
+    .wrap_number_first {
+        font-size: 2.5rem;
+    }
+    .WrapperTarifs {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .FS_title {
+        max-width: 90%;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+    .wrap_number_first {
+        font-size: 2.2rem;
+    }
+    .custom_btn_tarifs {
+        padding: 8px 15px;
+        margin: 5px;
+        font-size: 1rem;
+    }
+    .wrap_number {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 768px) {
+    .FS_title {
+        max-width: 95%;
+        font-size: 1.4rem;
+    }
+    .custom_btn_tarifs {
+        font-size: .9rem;
+    }
+    .wrap_number {
+        width: 95%;
+        margin-top: 20px;
+    }
+    .WrapperTarifs {
+        margin-top: 20px;
+    }
 }

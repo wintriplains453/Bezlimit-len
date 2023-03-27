@@ -34,42 +34,110 @@
     position: relative;
     overflow: hidden;
 }
-.WhyUs_title {
-    font-size: 5rem;
-    font-family: 'FuturaPT';
-    text-transform: uppercase;
-}
 .WhyUs_sub_title {
     font-size: 2rem;
     max-width: 100%;
+    margin-bottom: 20px;
     text-align: center;
 }
 .WhyUs_sub_title_margin {
     margin: 20px;
 }
 .WhyUs_answer {
+    padding-left: 50px;
     li {
-        list-style: none;
         font-size: 1.5rem;
         text-align: left;
         font-weight: 100;
+        max-width: 100%;
         position: relative;
-        padding-left: 10px;
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: $purple__opacity;
-            opacity: .3;
-        }
     }
 }
+.wrapper_content_whyUs {
+    background: $purple__opacity;
+    max-width: 60%;
+    margin: 0 auto;
+    color: #fff;
+    padding: 10px;
+
+}
 .WhyUs_content {
-    font-size: 2rem;
+    font-size: 1.65rem;
     max-width: 80%;
     margin: 30px auto;
     text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .WhyUs_content {
+        font-size: 1.3rem;
+        margin: 20px auto;
+    }
+    .WhyUs_sub_title {
+        font-size: 1.6rem;
+    }
+    .WhyUs_answer li {
+        font-size: 1.2rem;
+    }
+  }
+@media screen and (max-width: 1024px) {
+    .lefttext__block {
+        display: none;
+    }
+    .WhyUs_sub_title_margin {
+        display: none;
+    }
+    .WhyUs_content {
+        font-size: 1.1rem;
+    }
+    .WhyUs_sub_title {
+        font-size: 1.4rem;
+    }
+    .WhyUs_answer li {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .WhyUs_content {
+        max-width: 90%;
+    }
+    .wrapper_content_whyUs {
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .WhyUs__wrapper {
+        padding: 50px 0;
+    }
+    .WhyUs_content {
+        font-size: 1rem;
+    }
+    .WhyUs_sub_title {
+        font-size: 1.3rem;
+    }
+    .WhyUs_answer li {
+        font-size: .9rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    .WhyUs__wrapper {
+        justify-content: center;
+        padding: 5px;
+    }
+    .WhyUs_content {
+        font-size: .9rem;
+        margin: 10px auto;
+    }
+    .WhyUs_sub_title {
+        font-size: 1.2rem;
+    }
+    .WhyUs_answer li {
+        font-size: .9rem;
+    }
+    .WhyUs_answer {
+        padding-left: 20px;
+    }
+    .wrapper_content_whyUs, .WhyUs_content {
+        max-width: 100%;
+    }
 }

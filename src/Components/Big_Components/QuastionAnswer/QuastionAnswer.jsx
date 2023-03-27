@@ -86,6 +86,7 @@ function QuastionAnswer() {
     <section className='wrapper_quastion_answer' data-scroll-section>
 		<div className='LineDefault custom_line'></div> 
 		<div className='lefttext__block'>Часто задаваемые вопросы</div> 
+		<div className='main_Header_Box_title'>Часто задаваемые вопросы</div>
 		<div className="wrapper_accordion">
 			<Accordion questionsAnswers={questionsAnswers} />
 		</div>

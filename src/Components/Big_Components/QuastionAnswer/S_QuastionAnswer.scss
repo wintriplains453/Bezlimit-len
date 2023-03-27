@@ -6,6 +6,8 @@
     display: flex;
     justify-content: center;
     position: relative;
+    align-items: center;
+    flex-direction: column;
     &:after{
         content: "";
         position: absolute;
@@ -18,11 +20,25 @@
         transform: rotate(180deg);
     }
 }
+.QA_title {
+    width: 100%;
+    font-size: 4rem;
+    font-family: 'FuturaPT';
+    text-transform: uppercase;
+    background: linear-gradient(141.08deg,#cbad59 25.79%,#cabc85 63.66%,#b58f56 97.07%);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 30px 0;
+    margin-bottom: 60px;
+}
 .accordion {
     list-style: none;
     max-width: 60%;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 20vh auto;
+    margin-top: 0;
     // transform: translateY(-50%);
 }
   

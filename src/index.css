@@ -12,11 +12,10 @@
 }
 html, body, #root{
   height: 100%;
+  /* overflow-x: hidden; */
 }
 body {
   font-family: Ubunto_normal, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
@@ -40,6 +39,7 @@ code {
   border-radius: 20px;
   color: #000;
   transition: .8s;
+  font-weight: 100 !important;
 }
 .btn:hover {
   transition: .4s;
@@ -55,6 +55,16 @@ code {
   background: #fff;
   opacity: .3;
 }
+.main_Header_Box_title {
+  font-size: 4rem;
+  font-family: 'FuturaPT';
+  text-transform: uppercase;
+  background: linear-gradient(141.08deg,#cbad59 25.79%,#cabc85 63.66%,#b58f56 97.07%);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .attention {
   color: #ff5d5d;
 }
@@ -67,5 +77,20 @@ code {
 @media screen and (max-width: 1024px)  {
   .LineDefault {
     width: 0;
+  }
+  .main_Header_Box_title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 650px)  {
+  .main_Header_Box_title {
+    text-align: center;
+    font-size: 2.4rem; 
+  }
+}
+@media screen and (max-width: 425px)  {
+  .main_Header_Box_title {
+    font-size: 2rem;
   }
 }

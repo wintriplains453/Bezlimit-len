@@ -9,7 +9,9 @@ import useOnScreen from '../../../Hooks/useOnScreen'
 //Scss
 import './S_Tarifs.scss'; 
 
-function Tarifs({tarifs}) { 
+function Tarifs({tarifs, handlerTarifCard, handlerModalPayment}) { 
+  
+
 	let app = useRef(null)
   let images_tarifs = useRef(null)
   let content = useRef(null)
@@ -42,7 +44,7 @@ function Tarifs({tarifs}) {
 
     //Images Animation
     if (reveal)  {
-      tl.from(tarifs_children.children[0] ,{y: "1200px", duration: 2.2, ease: Power3.easeOut})
+      tl.from(tarifs_children.children[0] ,{y: 1200, duration: 2.2, ease: Power3.easeOut})
       .from(tarifs_children.children[0] ,{scale: 1.6, duration: 2, ease: Power3.easeOut}, "<")
 
       .from(tarifs_children.children[1], {y: 1280, duration: 1.4, ease: Power3.easeOut}, "<")
@@ -92,30 +94,52 @@ function Tarifs({tarifs}) {
               <div className="hero-content-inner" ref={content}>
                 <h1>
                   <div className="hero-content-line">
-                    <div className="hero-content-line-inner">Relieving the burden</div>
+                    <div className="hero-content-line-inner">«Безлимит на интернет-сервисы»</div>
                   </div>
                   <div className="hero-content-line">
-                    <div className="hero-content-line-inner">of disease caused</div>  
+                    <div className="hero-content-line-inner">мессенджеры, социальные сети, карты,</div>  
                   </div>
                   <div className="hero-content-line">
-                    <div className="hero-content-line-inner">by behaviors.</div>
+                    <div className="hero-content-line-inner">почтовые сервисы, музыка, видео.</div>
                   </div>
                 </h1>
-                <p>
-                  Better treats serious cardiometabolic diseases to transform
-                  lives and reduce healthcare utilization through the use of
-                  digital therapeutics.
-                </p>
-                <button className="btn customBtn">Explore</button>
+                <p>на отправку текстовых сообщений и голосовые/видеозвонки через мессенджеры:</p>
+                <ul>
+                  <li>WhatsApp</li>
+                  <li>Skype</li>
+                  <li>Telegram</li>
+                  <li>Wechat</li>
+                  <li>Kakaotalk</li>
+                  <li>Snapchat</li>
+                  <li>Viber и ICQ</li>
+                </ul>
+                <p>на отправку текстовых сообщений и просмотр новостной ленты в социальных сетях:</p>
+                <ul>
+                  <li>odnoklassniki</li>
+                  <li>vkontakte</li>
+                </ul>
+                <p>на пользование картами через официальное приложение: </p>
+                <ul>
+                  <li>Яндекс Карты</li>
+                  <li>Яндекс Навигатор</li>
+                  <li>2ГИС на почтовые сервисы Mail.Ru</li>
+                  <li>Gmail и Яндекс Почта на прослушивание музыки через официальное приложение Вконтакте.</li>
+                  <li>на просмотр видео в YouTube через официальное приложение.</li>
+                </ul>
+                <div className="wrapper_btns">
+                  <button className="btn customBtn" onClick={() => handlerTarifCard(null)}>Подобрать номер по тарифу</button>
+                  <button className="btn customBtn" onClick={handlerModalPayment}>как не платить за тариф</button>                  
+                </div>
+
               </div>
-            </div>
+            </div> 
             <div className="hero-images">
               <div ref={images_tarifs}  className="hero-images-inner">
                 {tarifs.map(item => {
                   return (
                     <div className={`hero-image tarif${item.title}`} key={item.id}>
                       <div className="blackSCreen"></div>
-                      <div className="wrapper_tarif_card_content">
+                      <div className="wrapper_tarif_card_content" onClick={() => handlerTarifCard(item)}>
                         <p className="title_tarif">{item.title} ₽</p>
                         <p className="tarif_month">В месяц</p>
                         <div className="tarif_content_card">
@@ -140,7 +164,7 @@ function Tarifs({tarifs}) {
           </div>
         </div>
       </div>
-		
+
     </section>
   );
 }

@@ -5,6 +5,7 @@ $width-tarif_card: 30%;
 $height-tarif_card: 20%;
 
 .Tarifs__wrapper {
+  position: relative;
   &:after{
     content: "";
     position: absolute;
@@ -56,28 +57,43 @@ $height-tarif_card: 20%;
         height: 100vh;
         .hero-content {
           width: 100%;
+
           .hero-content-inner {
-            width: 400px;
+            width: 80%;
             color: #fff;
             margin: 0 auto;
+            transform: translateY(-50px);
             h1 {
               font-weight: 500;
-              font-size: 32px;
+              font-size: 28px;
               margin-bottom: 24px;
               .hero-content-line {
                 margin: 0;
-                height: 44px;
-                overflow: hidden;
+                overflow-y: hidden;
                 .hero-content-line-inner {
+                  background: linear-gradient(141.08deg,#cbad59 25.79%,#e0d29a 63.66%,#b58f56 97.07%);
+                  background-repeat: no-repeat;
+                  background-origin: content-box;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;                  
                 }
               }
             }
             p {
-              font-size: 14px;
-              line-height: 24px;
+              font-size: 20px;
               font-weight: 300;
-              padding-right: 48px;
-              margin-bottom: 56px;
+              margin-bottom: 16px;
+            }
+            ul {
+              margin: 20px 0;
+              display: flex;
+              justify-content: flex-start;
+              flex-wrap: wrap;
+              li {
+                padding: 5px;
+                margin-left: 25px;
+                color: $gold;
+              }
             }
           }
         }
@@ -87,7 +103,6 @@ $height-tarif_card: 20%;
           position: relative;
           .hero-images-inner {
             .hero-image {
-              background: green;
               position: absolute;
               overflow: hidden; 
               width: $width-tarif_card;
@@ -165,8 +180,13 @@ $height-tarif_card: 20%;
   }
 }
 .customBtn {
-  padding: 15px 50px;
+  padding: 15px 20px;
+  font-size: 1rem;
   opacity: 1 !important;
+}
+.wrapper_btns {
+  display: flex;
+  justify-content: space-around;
 }
 
 .wrapper_tarif_card_content {
@@ -198,4 +218,75 @@ $height-tarif_card: 20%;
 .tarif_month {
   font-size: 1.5rem;
   margin: 10px;
+}
+
+.blackScreen_PaymentModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color: #000000, $alpha: .5);
+  z-index: 10;
+}
+.wrapper__aymentModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+.MP_margin {
+  margin: 20px 0;
+  p {
+    font-weight: bold;
+  }
+}
+.modalBTNTarif {
+  margin-top: 15px;
+}
+@media screen and (max-height: 830px)  {
+  .hero-content-inner {
+    margin-top: 120px !important;
+  }
+  
+}
+@media screen and (max-width: 1700px)  {
+  .hero .container .hero-inner {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+@media screen and (max-width: 1550px)  {
+  .tarif590 {
+    transform: translate(-50px, 0px) !important;
+  }
+  .hero-content-line {
+    font-size: 1.5rem;
+  }
+  .hero-content-inner p {
+    font-size: 1rem !important;
+  }
+  .hero .container .hero-inner .hero-content .hero-content-inner ul {
+    font-size: .9rem !important;
+  }
+  .wrapper_btns {
+    max-width: 80%;
+  }
+  .customBtn {
+    font-size: .8rem;
+    padding: 10px 15px;
+  }
+  .hero .container .hero-inner .hero-images .hero-images-inner .hero-image.tarif4000 .title_tarif, .hero .container .hero-inner .hero-images .hero-images-inner .hero-image.tarif3000 .title_tarif {
+    font-size: 3rem ;
+  }
+  .wrapper_tarif_card_content .title_tarif {
+    font-size: 1.5rem;
+  }
 }

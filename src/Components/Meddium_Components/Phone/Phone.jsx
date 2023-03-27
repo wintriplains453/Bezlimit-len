@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import './S_Phone.scss';
 
-function Phone() {
+function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore}) {
   const phones = [
     {
       id: 1,
@@ -46,18 +46,19 @@ function Phone() {
     },
   ]
 
-  const [is_modalPhone, setIs_modalPhone] = useState(false);
-  const [modal_data, setModal_data] = useState({});
+  const delivery = [
+    {id: 1, title: "eSIM", description: "Доставка прямо в телефон"},
+    {id: 2, title: "Курьерская доставка", description: "По Москве и даже в самые отдаленные точки России"},
+    {id: 3, title: "Самовывоз", description: "Из пункта выдачи заказов"},
+    {id: 4, title: "Почта России", description: "Отправляем во все регионы страны"},
+  ]
+  
   const [switchSCreen, setSwitchScreen] = useState(true)
-
-  function toggleModalPhone(item) {
-    setIs_modalPhone(!is_modalPhone)
-    setModal_data(item)
-  }
 
   function toggleScreen() {
     setSwitchScreen(!switchSCreen)
   }
+
 
   return (
     <div className='phone__wrapper'>
@@ -85,53 +86,39 @@ function Phone() {
                       <div key={item.id} className="item_phone">
                         <div className='item_phone_flex'>
                           <p className='item_phone_number'>{item.number}</p>
-                          <p className='item_phone_tarif' onClick={() => toggleModalPhone(item)}><span style={{opacity: 0.4, color: '#000'}}>Тариф:</span> {item.tarif}</p>
+                          <p className='item_phone_tarif' onClick={() => handlerModalPhone(item)}><span style={{opacity: 0.4, color: '#000'}}>Тариф:</span>{item.tarif}</p>
                         </div>
-                        <button className='custom_item_button'>Забронировать</button>
+                        <button className='custom_item_button' onClick={() => handlerBron(item)}>Забронировать</button>
                       </div>
                     )
                   })}
                   </> : <p>Пусто</p>
                 }
-                {is_modalPhone ?
-                  <>
-                    <div className='Modal_phone'>
-                      <h2>{modal_data.number}</h2>
-                      <p>{modal_data.tarif}</p>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, consequuntur.</p>
-                    </div>
-                    <div className='Custom_black_screen_wrapper' onClick={() => setIs_modalPhone(!is_modalPhone)}></div>  
-                  </> : null
-                }
-
               </div>
               : 
               <div className='List_PhonesTarifs'>
-                <div className='wrapper_delivery'>
-                  <p className='delivery_header'>Курьерская доставка</p>
-                  <p className='delivery_content'>По Москве и даже в самые отдаленные точки России</p>
-                  <button className='btn customDelivery'>Подробнее</button>
-                </div>
-                <div className='wrapper_delivery'>
-                  <p className='delivery_header'>Самовывоз</p>
-                  <p className='delivery_content'>Из пункта выдачи заказов</p>
-                  <button className='btn customDelivery'>Подробнее</button>
-                </div>
-                <div className='wrapper_delivery'>
-                  <p className='delivery_header'>Почта России</p>
-                  <p className='delivery_content'>Отправляем во все регионы страны</p>
-                  <button className='btn customDelivery'>Подробнее</button>
-                </div>
-                <div className='wrapper_delivery'>
-                  <p className='delivery_header'>eSIM</p>
-                  <p className='delivery_content'>Доставка прямо в телефон</p>
-                  <button className='btn customDelivery'>Подробнее</button>
-                </div>
+                {
+                  delivery.map(item => {
+                    return (
+                    <div className='wrapper_delivery' key={item.id}>
+                      <p className='delivery_header'>{item.title}</p>
+                      <p className='delivery_content'>{item.description}</p>
+                      <button className='btn customDelivery' onClick={() => handlerModalPhoneMore(item)}>Подробнее</button>
+                    </div> 
+                  )})
+                }     
               </div>
             }
-            <div className='bottom_wrapper_phone'>
-              <div className='btn customBTN'>Кнопка</div>
-            </div>
+            {switchSCreen ?
+              <div className='bottom_wrapper_phone'>
+                <div className='btn customBTN'>Обновить номера </div>
+              </div>
+                :
+              <div className='bottom_wrapper_phone'>
+                <div className='btn customBTN' onClick={() => handlerModalPhoneMore({id: 5})}>Пополнение баланса</div>
+              </div>
+            }
+
           </div>
         </div>
       </div>

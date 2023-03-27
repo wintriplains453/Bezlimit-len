@@ -33,7 +33,7 @@ function WhyUs() {
       timeline
       .from(animation_text_one.current, {y: "100%", duration: 1, ease: Power3.easeInOut})
       .from(animation_text_two.current, {y: "100%", duration: 1, ease: Power3.easeInOut}, "<")
-      .from(animation_text_three.current, {y: "100%", duration: 1, ease: Power3.easeInOut}, "<")
+      .from(animation_text_three.current, {y: "100%", delay: 0.2, duration: 1, ease: Power3.easeInOut}, "<")
       .from(animation_text_four.current, {y: "100%", duration: 1, ease: Power3.easeInOut}, "<")
     }
   }, [reveal])// eslint-disable-line react-hooks/exhaustive-deps
@@ -44,18 +44,29 @@ function WhyUs() {
         <div className='lefttext__block'>почему именно мы?</div> 
         <div className='WhyUs__wrapper_hidden' >
           <div className='background_header_Y'></div>
-          <p className='WhyUs_title' ref={animation_text_one}>Почему именно мы?</p>          
+          <p className='main_Header_Box_title' ref={animation_text_one}>Почему именно мы?</p>          
         </div>
 
         <div className='WhyUs__wrapper_hidden WhyUs_sub_title_margin'>
           <div className='background_header_Y'></div>
-          <p className='WhyUs_sub_title' ref={animation_text_two}>Наши конкурентные преимущества:</p>
+          
         </div>
-        <ul className='WhyUs_answer'>
-          <li>красивый номер бесплатно к тариф</li>
-          <li>возможность снижать тариф до 0</li>
-          <li>комиссия за подключение номеров вашим знакомым</li>
-        </ul>
+        <p className='WhyUs_content'>
+          <p>БЕЗЛИМИТ - Виртуальный оператор сотовой связи,</p>
+          <p>работаем с 2012 года и сегодня располагаем базой более чем </p>
+          <p>в 1 000 000 красивых номеров,</p>
+          <p>является лидером на этом рынке в России.</p>
+        </p>
+        <div className='wrapper_content_whyUs'>
+          <p className='WhyUs_sub_title' ref={animation_text_two}>Наши конкурентные преимущества:</p>
+          <ul className='WhyUs_answer'>
+            <li>Красивый номер бесплатно к тариф</li>
+            <li>Возможность снижать тариф до 0</li>
+            <li>Комиссия за подключение номеров вашим знакомым</li>
+            <li>Подключение по всей России, бесплатная доставка и выгодные безлимитные тарифы на мобильную связь и интернет</li>
+          </ul>          
+        </div>
+
         <div className='WhyUs__wrapper_hidden'>
           <div className='background_header_Y'></div>
           <p className='WhyUs_content' ref={animation_text_four}>Как такое возможно? Всё очень просто. Мы вкладываемся в развитие и нуждаемся в новых абонентах. Всё очень просто.</p>

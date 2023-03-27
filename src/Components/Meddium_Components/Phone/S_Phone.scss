@@ -36,7 +36,6 @@
     .phone__bar {
         height: 100%;
         background-image: url(../../../Assets/svg/status_bar.svg);
-        background-size: 85% auto;
         background-repeat: no-repeat;
         background-size: contain;
         margin: 0 auto;
@@ -46,7 +45,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 60px;
+    height: 50px;
 }
 .phone__area_menu_number, .phone__area_menu_tarif {
     width: 100%;
@@ -82,21 +81,6 @@
 }
 .List_PhonesTarifs::-webkit-scrollbar-thumb {
     background-color: purple;
-}
-.Modal_phone {
-    position: absolute;
-    left: 10%;
-    top: 100px;
-    width: 80%;
-    height: 250px;
-    z-index: 2;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    background: #fff;
 }
 .item_phone {
     display: grid;
@@ -175,7 +159,7 @@
         font-size: 1rem;
     }
 }
-.wrapper_delivery {
+.wrapper_delivery { 
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -201,14 +185,7 @@
     text-align: center;
 }
 
-.Custom_black_screen_wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 72vh;
-    background: rgba($color: #000000, $alpha: 0.5);
-}
+
 .bottom_wrapper_phone {
     position: absolute;
     bottom: 0;
@@ -223,9 +200,45 @@
     max-height: 100px;
 }
 .customBTN {
-    padding: 8px 25%;
+    padding: 8px 20%;
     font-size: 1.2rem;
 }
+//height media
+@media screen and (max-height: 1000px) {
+    .phone__area_menu {
+        height: 35px;
+        padding: 0px;
+    }    
+}
+@media screen and (max-height: 800px) {
+    .customBTN {
+        padding: 5px 8px;
+        font-size: .9rem;
+    }   
+}
+@media screen and (max-height: 750px) {
+    .custom_item_button {
+        width: 100%;
+    }
+}
+@media screen and (max-height: 900px) {
+    .wrapper_delivery {
+        padding: 0;
+        padding-bottom: 8px;
+        border: none;
+        border-bottom: 1px solid $gold;
+    }
+    .wrapper_delivery .delivery_header {
+        font-size: 1rem;
+    }
+    .wrapper_delivery .delivery_content {
+        font-size: .8rem;
+    }
+    .wrapper_delivery .customDelivery {
+        padding: 5px;
+    }
+}
+
 
 @media screen and (max-width: 1600px) {
     .item_phone_number {
@@ -252,12 +265,7 @@
         border-radius: 25px;
     }
 }
-@media screen and (max-height: 1000px) {
-    .phone__area_menu {
-        height: 35px;
-        padding: 0px;
-    }    
-}
+
 @media screen and (max-width: 650px) {
     .phone__wrapper {
         height: 90vh;
