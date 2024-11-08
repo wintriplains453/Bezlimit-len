@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bezlimit-len/static/css/main.8307a4ca.css",
-    "main.js": "/Bezlimit-len/static/js/main.2f83cd3d.js",
+    "main.js": "/Bezlimit-len/static/js/main.fb2140ad.js",
     "static/media/bezlimit_video2.mp4": "/Bezlimit-len/static/media/bezlimit_video2.bfaa41919c885a3a1f72.mp4",
     "static/media/job_third.jpg": "/Bezlimit-len/static/media/job_third.1a089b5bf3a557683d2d.jpg",
     "static/media/tarif.jpg": "/Bezlimit-len/static/media/tarif.7b01dbb434bc26690148.jpg",
@@ -18,10 +18,10 @@
     "static/media/status_bar.svg": "/Bezlimit-len/static/media/status_bar.18c52dd42bcd0c8eba63.svg",
     "index.html": "/Bezlimit-len/index.html",
     "main.8307a4ca.css.map": "/Bezlimit-len/static/css/main.8307a4ca.css.map",
-    "main.2f83cd3d.js.map": "/Bezlimit-len/static/js/main.2f83cd3d.js.map"
+    "main.fb2140ad.js.map": "/Bezlimit-len/static/js/main.fb2140ad.js.map"
   },
   "entrypoints": [
     "static/css/main.8307a4ca.css",
-    "static/js/main.2f83cd3d.js"
+    "static/js/main.fb2140ad.js"
   ]
 }
