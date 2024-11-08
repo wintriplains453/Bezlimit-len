@@ -37,8 +37,8 @@ function FormBlock({tarifs, TarifCard, phoneData}) {
   }, [phoneData])
   return (
     <section className='FormBlock__wrapper' data-scroll-section>
-      <div className='LineDefault custom_line'></div> 
-      <div className='lefttext__block'>Формы</div> 
+      <div className='LineDefault'></div> 
+      <div className='lefttext__block custom'>Формы</div> 
       <div className='black_screen'></div>
       <div className='formblock__index'>
           <ul className='menu_formblock'>

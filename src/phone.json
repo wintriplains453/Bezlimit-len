@@ -1,0 +1,50 @@
+{
+   "items": [
+      {
+          "id": 3,
+          "phone": 9686495555,
+          "tariff_price": 1500
+      },
+      {
+          "id": 75,
+          "phone": 9629995558,
+          "tariff_price": 1000
+      },
+      {
+          "id": 79,
+          "phone": 9629994441,
+          "tariff_price": 1000
+      },
+      {
+          "id": 99,
+          "phone": 9629955666,
+          "tariff_price": 1000
+      },
+      {
+          "id": 100,
+          "phone": 9629922666,
+          "tariff_price": 1000
+      },
+      {
+          "id": 426,
+          "phone": 9688219999,
+          "tariff_price": 2000
+      },
+      {
+          "id": 444,
+          "phone": 9687395555,
+          "tariff_price": 1500
+      },
+      {
+          "id": 646,
+          "phone": 9687148888,
+          "tariff_price": 2000
+      },
+      {
+          "id": 647,
+          "phone": 9687135555,
+          "tariff_price": 1500
+      }
+  ],
+  "message": "ok"    
+}    

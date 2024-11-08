@@ -51,12 +51,12 @@ function WhyUs() {
           <div className='background_header_Y'></div>
           
         </div>
-        <p className='WhyUs_content'>
+        <div className='WhyUs_content'>
           <p>БЕЗЛИМИТ - Виртуальный оператор сотовой связи,</p>
           <p>работаем с 2012 года и сегодня располагаем базой более чем </p>
           <p>в 1 000 000 красивых номеров,</p>
           <p>является лидером на этом рынке в России.</p>
-        </p>
+        </div>
         <div className='wrapper_content_whyUs'>
           <p className='WhyUs_sub_title' ref={animation_text_two}>Наши конкурентные преимущества:</p>
           <ul className='WhyUs_answer'>

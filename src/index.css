@@ -54,6 +54,7 @@ code {
   height: 100%;
   background: #fff;
   opacity: .3;
+  z-index: 3;
 }
 .main_Header_Box_title {
   font-size: 4rem;
@@ -64,6 +65,14 @@ code {
   background-origin: content-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.iconsCloser {
+  font-size: 40px;
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  color: #ff5d5d;
 }
 .attention {
   color: #ff5d5d;

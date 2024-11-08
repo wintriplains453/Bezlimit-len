@@ -81,6 +81,14 @@
     }
   }
 @media screen and (max-width: 1024px) {
+    .WhyUs__wrapper {
+        &:after {
+            display: none;
+        }
+        &:before {
+            display: none;
+        }
+    }
     .lefttext__block {
         display: none;
     }

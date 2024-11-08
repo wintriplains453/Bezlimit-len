@@ -2,49 +2,7 @@ import React, {useState} from 'react';
 
 import './S_Phone.scss';
 
-function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore}) {
-  const phones = [
-    {
-      id: 1,
-      number: 9859014444,
-      tarif: 1250
-    },
-    {
-      id: 2,
-      number: 9532295555,
-      tarif: 1250
-    },
-    {
-      id: 3,
-      number: 9532295555,
-      tarif: 1250
-    },
-    {
-      id: 4,
-      number: 9672043333,
-      tarif: 1250
-    },
-    {
-      id: 5,
-      number: 9842539999,
-      tarif: 1250
-    },
-    {
-      id: 6,
-      number: 9531652222,
-      tarif: 1250
-    },
-    {
-      id: 7,
-      number: 9676830000,
-      tarif: 1500
-    },
-    {
-      id: 8,
-      number: 9893632222,
-      tarif: 1500
-    },
-  ]
+function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore, phones}) {
 
   const delivery = [
     {id: 1, title: "eSIM", description: "Доставка прямо в телефон"},
@@ -52,6 +10,10 @@ function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore}) {
     {id: 3, title: "Самовывоз", description: "Из пункта выдачи заказов"},
     {id: 4, title: "Почта России", description: "Отправляем во все регионы страны"},
   ]
+
+  function reload_number() {
+
+  }
   
   const [switchSCreen, setSwitchScreen] = useState(true)
 
@@ -78,21 +40,23 @@ function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore}) {
           <div className='phone__area_wrapper'>
             {switchSCreen ?
               <div className='List_PhonesTarifs'>
-                
                 {phones.length > 0 ?
                   <>  
                   {phones.map(item => {
                     return (
                       <div key={item.id} className="item_phone">
                         <div className='item_phone_flex'>
-                          <p className='item_phone_number'>{item.number}</p>
-                          <p className='item_phone_tarif' onClick={() => handlerModalPhone(item)}><span style={{opacity: 0.4, color: '#000'}}>Тариф:</span>{item.tarif}</p>
+                          <p className='item_phone_number'>{item.phone}</p>
+                          <p className='item_phone_tarif'><span style={{opacity: 0.4, color: '#000'}}>Тариф:</span>{item.tariff_price}</p>
                         </div>
                         <button className='custom_item_button' onClick={() => handlerBron(item)}>Забронировать</button>
                       </div>
                     )
                   })}
-                  </> : <p>Пусто</p>
+                  </> : 
+                    <div className="loaderPhone">
+                      <p>Загрузка...</p>
+                    </div>
                 }
               </div>
               : 
@@ -111,7 +75,7 @@ function Phone({handlerBron, handlerModalPhone, handlerModalPhoneMore}) {
             }
             {switchSCreen ?
               <div className='bottom_wrapper_phone'>
-                <div className='btn customBTN'>Обновить номера </div>
+                <div className='btn customBTN' onClick={reload_number}>Обновить номера </div>
               </div>
                 :
               <div className='bottom_wrapper_phone'>

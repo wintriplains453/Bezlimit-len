@@ -148,8 +148,55 @@
         right: 0;
         top: 0;
         bottom: 0;
-        z-index: 1;
+        z-index: 4;
         background: rgba($color: #000000, $alpha: 0.75);
+    }
+}
+.regionWrapper {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+    background: rgba($color: $purple__opacity, $alpha: 0.8);
+    border-radius: 100%;  
+    z-index: 3;
+    cursor: pointer;  
+}
+.modalRegionWrapper {
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    margin: 0 auto;
+    max-height: 80vh;
+    padding: 10px;
+    background: #fff;
+    z-index: 110;
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+.screenRegion {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #000, $alpha: 0.7);
+    z-index: 2;
+}
+.modalRegionItemWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;    
+}
+.modalRegionItem {
+    margin: 3px;
+    padding: 3px;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+        background: #e0e0e0;
     }
 }
 .background_mobile_screen {
@@ -161,7 +208,7 @@
     min-height: 100vh;
 }
 .Modal_phone {
-    position: absolute;
+    position: fixed;
     padding: 20px;
     left: 50%;
     top: 50%;
@@ -170,7 +217,7 @@
     background: #fff;
 }
 .Modal_phoneMore {
-    position: absolute;
+    position: fixed;
     padding: 40px;
     left: 50%;
     top: 50%;
@@ -302,6 +349,9 @@
     .linesParent {
         overflow: inherit;
     }
+    .header__content {
+        min-height: calc(100vh - 70px);
+    }
     .backgrond__video {
         position: fixed;
     }
@@ -357,6 +407,18 @@
     }
     .absolute__header__content_lefttext, .absolute__header__content_lefttext_copy {
         left: 30px;
+    }
+    .Modal_phoneMore {
+        max-width: 60%;
+        max-height: 50vh;
+        overflow: auto;
+    }
+    .absolute__header__content_lefttext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+        max-width: 25%;
     }
 }
 @media screen and (max-width: 768px)  {
@@ -430,5 +492,15 @@
     }
     .lefttext__mainblock_header p, .btnBaner {
         font-size: 1.2rem !important;
+    }
+    .Modal_phoneMore {
+        max-width: inherit;
+        width: 75%;
+        max-height: 50vh;
+        overflow: auto;
+    }
+    .absolute__header__content_lefttext {
+        max-width: 70%;
+        left: 70%;
     }
 }

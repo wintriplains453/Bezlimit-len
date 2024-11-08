@@ -26,7 +26,14 @@
     background: #7746BA;
 }
 .phone__area_wrapper {
+    height: 90%;
+}
+.loaderPhone {
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .phone__bar_wrapper {
     width: 100%;
@@ -263,6 +270,10 @@
     }
     .phone__area_screen {
         border-radius: 25px;
+    }
+    .List_PhonesTarifs {
+        overflow: auto;
+        height: 90%;
     }
 }
 

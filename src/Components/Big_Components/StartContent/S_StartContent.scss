@@ -55,6 +55,7 @@
     line-height: 10px;
     letter-spacing: 3px;
     word-spacing: 8px;
+    z-index: 2;
 }
 .SC__wrapper_hidden {
     position: relative;
@@ -139,6 +140,12 @@
 @media screen and (max-width: 1024px)  {
     .StartContent__wrapper {
         padding-bottom: 40px;
+        &:before {
+            display: none;
+        }
+        &:after {
+            display: none;
+        }
     }
     .SC__wrapper_hidden {
         margin-bottom: 0;

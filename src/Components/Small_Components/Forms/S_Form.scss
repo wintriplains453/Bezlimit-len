@@ -9,7 +9,11 @@
     padding: 10px 20px;
     margin-top: 30px;
     width: 40%;
-    font-size: size_mode(.6);
+    font-size: 1rem;
+}
+.FS_wrapper {
+    max-width: 60%;
+    margin-top: 10px;
 }
 .wrap_number {
     display: inline-block;
@@ -22,19 +26,6 @@
     font-size: 3rem;
     margin: 0 10px;
 }
-.display_number {
-    border: 1px solid $gold;
-    margin: 0 5px;
-    width: 32px;
-    height: 58px;
-    padding: 2px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    position: relative;
-}
 .input_number {
     position: absolute;
     border: none;
@@ -43,12 +34,37 @@
     background-color: transparent;
     outline: none;
 }
+.SpecalRetreat {
+   margin-right: 30px !important;
+}
+.iHXrTl {
+    z-index: 2;
+}
+.MaskPhone {
+    position: absolute;
+    z-index: 0;
+    left: 12%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    div {
+        width: 32px;
+        height: 58px;  
+        padding: 2px;
+        margin: 0 5px;  
+        font-size: 32px;  
+        box-sizing: border-box;  
+    }
+    .firstMaskPhone {
+        margin: 0 10px;
+        font-size: 2.5rem;
+    }
+}
 .special_symbolPhone {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    font-size: 3rem;
+    font-size: 3rem !important;
     color: $gold;
 }
 .special_symbolPhoneNone {
@@ -139,15 +155,14 @@
 .PD_wrapper_title {
     margin-bottom: 10px;
     p {
-        font-size: 2rem;
         text-align: center;
     }
-    .you_phone_title {
-        background: linear-gradient(141.08deg,#cbad59 25.79%,#e0d29a 63.66%,#b58f56 97.07%);
-        background-repeat: no-repeat;
-        background-origin: content-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;   
+    .FS_title {
+        max-width: 100%;
+    }
+    .phone_number_take {
+        margin-top: 20px;
+        font-size: 2rem;
     }
 }
 .PD_wrapper_inputs {
@@ -159,6 +174,29 @@
 input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
     color: rgba($color: #fff, $alpha: .5);
     position: relative;
+}
+.phonesResults__wrapper {
+    border-top: 1px solid $gold;
+    padding: 20px 5px;
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+.phonesResults__wrapper_mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;   
+    justify-content: center;
+    grid-gap: 10px;
+}
+.phonesResults__item {
+    border-bottom: 1px solid $purple__opacity;
+    padding: 10px; 
+}
+.phonesResultsHeader {
+    color: $gold;
+    font-size: 1.4rem;
 }
 @media screen and (max-width: 1300px) {
     .custom_btn_tarifs {
@@ -176,6 +214,9 @@ input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spi
     }
     .WrapperTarifs {
         max-width: 100%;
+    }
+    .MaskPhone {
+        left: 10%;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -196,6 +237,20 @@ input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spi
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+    .wrapper_content_form input {
+        font-size: 1.2rem;
+    }
+    .PD_wrapper_title {
+        .phone_number_take {
+            font-size: 1.6rem;
+        }
+    }
+    .PD_border {
+        max-width: 80%;
+    }
+    .phonesResultsHeader {
+        font-size: 1.2rem;
+    }
 }
 @media screen and (max-width: 768px) {
     .FS_title {
@@ -206,10 +261,116 @@ input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spi
         font-size: .9rem;
     }
     .wrap_number {
-        width: 95%;
         margin-top: 20px;
     }
     .WrapperTarifs {
         margin-top: 20px;
+    }
+    .PD_border {
+        padding-left: 10px;
+        text-align: center;
+    }
+    .PD__wrapper_item {
+        margin: 10px 0;
+        justify-content: inherit;
+        p {
+            text-align: center;
+        }
+    }
+    .PDI_title, .PDI_title_tarif {
+       font-size: .9rem;
+    }
+    .wrapper_content_form input {
+        font-size: 1rem;
+    }
+    .btn_send {
+        padding: 10px 15px;
+    }
+    .phone_number_take {
+        font-size: 1.2rem;
+    }
+    .MaskPhone {
+        left: 12%;
+        div {
+            width: 22px;
+            height: 40px;  
+            padding: 2px;
+            margin: 0 2px;  
+            font-size: 22px;  
+            box-sizing: border-box;  
+        }
+    }
+    .SpecalRetreat {
+        margin-right: 20px !important;
+    }
+    .phonesResultsHeader {
+        font-size: 1.1rem;
+    }
+    .phonesResultsContent {
+        font-size: .8rem;
+    }
+    .phonesResults__wrapper_mini {
+        grid-template-columns: 1fr 1fr 1fr;   
+        grid-gap: 8px;
+    }
+    .phonesResults__item {
+        padding: 8px; 
+    }
+}
+@media screen and (max-width: 600px) {
+    .PD_border, .PD_area_inputs {
+        max-width: 100%;
+        margin: 10px;
+    }
+    .btn_send {
+        font-size: .9rem;
+        padding: 10px;
+    }
+    .menu_formblock  {
+        height: 60px;
+        li {
+            font-size: bold;
+        }
+    }
+    .logo_form {
+        height: 60px !important;
+    }
+    .Attention_eight {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .PD_wrapper_title .phone_number_take {
+        font-size: 1.3rem !important;
+    }
+    .menu_formblock li {
+        font-size: 1rem !important;
+    }
+}
+@media screen and (max-width: 420px) {
+    .PDI_title, .PDI_title_tarif {
+        font-size: .8rem;
+    }
+    .wrapper_content_form input {
+        font-size: .9rem;
+    }
+    .btn_send {
+        font-size: .8rem;
+        width: 50%;
+    }
+    .FS_wrapper {
+        max-width: 80%;
+    }
+    .Attention_eight {
+        margin-top: 10px;
+    }
+    .phonesResults__wrapper_mini {
+        grid-template-columns: 1fr 1fr;   
+        grid-gap: 8px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .menu_formblock li {
+        font-size: .85rem !important;
     }
 }

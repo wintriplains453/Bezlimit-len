@@ -8,7 +8,7 @@ const AccordionItem = ({ faq, active, onToggle }) => {
   return (
     <li className={`accordion_item ${active ? "active" : ""}`}>
       <button className="accordion_button" onClick={onToggle}>
-        {question}
+        <p>{question}</p>
         <span className="accordion_control"><HiPlus /></span>
       </button>
       <div

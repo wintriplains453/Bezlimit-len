@@ -15,6 +15,8 @@ import Footer from './Components/Big_Components/Footer/Footer';
 import FormBlock from './Components/Big_Components/FormBlock/FormBlock';
 import QuastionAnswer from './Components/Big_Components/QuastionAnswer/QuastionAnswer';
 import Tarifs from './Components/Big_Components/Tarifs/Tarif';
+import WhyUs from './Components/Big_Components/WhyUs/WhyUs';
+import NpayTariffs from './Components/Big_Components/NpayTariffs/NpayTariffs';
 
 //Meddium_Components
 import Phone from './Components/Meddium_Components/Phone/Phone';
@@ -23,18 +25,21 @@ import Phone from './Components/Meddium_Components/Phone/Phone';
 import VideoSRC from './Assets/videos/bezlimit_video2.mp4'
 
 //Icons
-// import { HiCheck } from "react-icons/hi2";
+import { IoIosClose } from "react-icons/io";
 
+//SCSS
 import './App.scss';
-import WhyUs from './Components/Big_Components/WhyUs/WhyUs';
+
+//data
+import phone from './phone.json'
 
 function App() {
   gsap.registerPlugin(CSSPlugin)
+
   const [preloader, setPreloader] = useState(true);
   const [NlocoScroll, setNlocoScroll] = useState(null);
   const [TarifCard, setTarifCard] = useState(0)
-  const [is_paymentModal, setPaymentModal] = useState(false)
-  const [phoneData, setPhoneData] = useState(null)
+  const [phoneData, setPhoneData] = useState([])
 
   const [modal_data, setModal_data] = useState({});
   const [modal_render, setModalRender] = useState(0);
@@ -42,6 +47,11 @@ function App() {
   const [is_modalPhone, setIs_modalPhone] = useState(false);
   const [is_modalPhoneMore, setIs_modalPhoneMore] = useState(false);
 
+  const [regionItem, setRegionItem] = useState({ key:"Москва и область", value:"Москва"})
+  const [screenRegion, setScreenRegion] = useState(false);
+  const [is_region, setIsRegion] = useState(false);
+
+  const [phones] = useState(phone.items)
 
   const tarifs = [
 		{id: 1, title: 590, minutes: 400, sms: 300, gb: 20},
@@ -68,6 +78,12 @@ function App() {
     })
     setNlocoScroll(locoScroll)
   }, [preloader])
+
+  useEffect(() => {
+    if (localStorage.getItem('bez_session') === "" || !localStorage.getItem('bez_session')) {
+      localStorage.setItem('bez_session', ((Math.random() * (1000000000 - 0) + 0).toLocaleString('fullwide', { useGrouping: false }).toString()));
+    }
+  }, [regionItem])
 
   function callbackMenu(item) {
     switch(item) {
@@ -103,7 +119,7 @@ function App() {
     if(item != null) {
       setTarifCard(item)
     }
-    NlocoScroll.scrollTo("#tarifs")
+    NlocoScroll.scrollTo("#form")
   }
 
   function handlerBron(item) {
@@ -111,8 +127,7 @@ function App() {
     NlocoScroll.scrollTo("#form");
   }
   function handlerAfterTarif() {
-    setPaymentModal(false)
-    NlocoScroll.scrollTo("#tarifs")
+    NlocoScroll.scrollTo("#form")
   }
 
   function handlerModalPhone(item) {
@@ -124,9 +139,14 @@ function App() {
     setModal_data(item)
     setModalRender(item.id)
   }
-
-  function handlerModalPayment() {
-    setPaymentModal(!is_paymentModal)
+  function selectRegion(item) {
+    setRegionItem(item)
+    setIsRegion(!is_region)
+    setScreenRegion(!screenRegion)
+  }
+  function hendlerScreenReg() {
+    setIsRegion(!is_region)
+    setScreenRegion(!screenRegion)
   }
 
   const [timerState, setTimer] = useState(0);
@@ -226,6 +246,7 @@ function App() {
               <div id="main">
                 <Header callbackMenu={callbackMenu}/>
               </div>
+              {screenRegion ? <div className='screenRegion' onClick={hendlerScreenReg}></div> : null}
               <div className='header__content'>
                 <div className='absolute__header__content_righttext'>
                   <div className='linesParent'>
@@ -250,7 +271,7 @@ function App() {
                   </div>
                 </div>
                 <div className='wrapper__item_phone' ref={wrapper_phone}>
-                  <Phone handlerBron={handlerBron} handlerModalPhone={handlerModalPhone} handlerModalPhoneMore={handlerModalPhoneMore}/>
+                  <Phone handlerBron={handlerBron} handlerModalPhone={handlerModalPhone} handlerModalPhoneMore={handlerModalPhoneMore} phones={phones}/>
                 </div>
                 <div className='LineDefault'></div>  
                 <div className='absolute__header__content_lefttext'>
@@ -269,8 +290,8 @@ function App() {
             <div id="whyus">
               <WhyUs />
             </div>
-            <div id="tarifs">
-              <Tarifs tarifs={tarifs} handlerTarifCard={handlerTarifCard} handlerModalPayment={handlerModalPayment}/>
+            <div id='npaytar'>
+              <NpayTariffs handlerAfterTarif={handlerAfterTarif}/>
             </div>
             <div id="job">
               <StartContent />
@@ -280,6 +301,9 @@ function App() {
             </div>
             <div id="QuastionAnswer">
               <QuastionAnswer />
+            </div>
+            <div id="tarifs">
+              <Tarifs tarifs={tarifs} handlerTarifCard={handlerTarifCard}/>
             </div>
             <div id="footer">
               <Footer />
@@ -299,6 +323,7 @@ function App() {
               {is_modalPhoneMore ?
                 <>
                   <div className='Modal_phoneMore'>
+                    <IoIosClose className='iconsCloser' onClick={() => setIs_modalPhoneMore(false)}/>
                     {modal_render === 1 ? 
                       <div className='Modal_phoneMore_content'>
                         <h2>Виртуальная</h2>
@@ -352,51 +377,9 @@ function App() {
                   <div className='Custom_black_screen_wrapper' onClick={() => setIs_modalPhoneMore(!is_modalPhoneMore)}></div>  
                 </> : null
               }
-
-              {is_paymentModal ?
-                <>
-                  <div className="blackScreen_PaymentModal" onClick={() => setPaymentModal(!is_paymentModal)}></div>
-                  <div className="wrapper__aymentModal">
-                    <h2>Не плати за связь с Безлимит! </h2>
-                    <p>Вы бы хотели не платить за связь? </p>
-                    <p>С Безлимит это возможно! </p>
-                    <p>Просто приводите близких, друзей и знакомых в Безлимит и получайте скидку на абонентскую плату до 100%!</p>
-                    <div className="MP_margin">
-                      <p>Как участвовать в акции? </p>
-                    </div>
-                    <p>В приложении Безлимит Вы найдете ссылку-приглашение. Скопируйте и отправьте ее другу. Он переходит по ссылке, подключает номер, а Вы получаете скидку на связь. </p>
-                    <div className="MP_margin">
-                      <p>Где взять ссылку? </p>
-                    </div>
-                    <div>
-                      <p>Приложение Безлимит → Главная → баннер «Не плати за связь» → Поделиться </p>
-                    </div>
-                    <div className="MP_margin">
-                      <p>Что Вы получите? </p>
-                    </div>
-                    <p>За месяц вы получите 20% от абонентской платы друга. Начисление коинов производится ежедневно в равных долях. Накопленными коинами можно оплачивать свою связь. Приведите несколько друзей и получайте коины с каждого. Таким образом, связь для вас станет бесплатной!</p>
-                    <div className="MP_margin">
-                      <p>Какие условия?</p>
-                    </div>
-                    <p>Акция действует, если номер друга был подключен по ссылке-приглашению. Коины начисляются каждый день, пока подключенный по ссылке-приглашению номер активен (не заблокирован). Количество человек, приведенных по акции, не ограничено. Максимальная скидка на связь — 100%. </p>
-                    <p>Безлимиткоин (коин) — расчетная единица, зачисляемая на бонусный счет пользователя за подключенный по ссылке-приглашению и активный номер. Сумма начисленных бонусов может быть использована пользователем для оплаты мобильной связи и услуг и не подлежит обмену на денежные средства. </p>
-                    <div className="MP_margin">
-                      <p>Срок действия</p>
-                      <p>Акция бессрочная.</p>
-                      <p>Давайте на примере </p>
-                    </div>
-                    <p>Представим, что Ваш тарифный план «На связи 790». Вы отправляете ссылку-приглашение другу, он подключает красивый номер на тариф «На связи 1000». </p>
-                    <p>Ежедневно вы будете получать безлимиткоины, если номер друга будет активен. Общая сумма начислений за месяц — 20% от стоимости тарифного плана друга. В нашем случае это 200 коинов, то есть примерно 6, 67 рублей в день.  </p>
-                    <p>Если таких друзей у вас будет четверо, то накопленные за месяц бонусы полностью покроют расходы на Вашу связь за месяц. Друзьям — красивый номер и первоклассное обслуживание, Вам — бесплатная связь!  </p>
-                    <p>Став пользователем Безлимит, Ваш друг тоже сможет участвовать в акции.</p>
-                    <button className="btn customBtn modalBTNTarif" onClick={handlerAfterTarif}>Подобрать номер по тарифу</button>
-                  </div>
-                </> : null
-              }
           </div>              
         )
       }
-
     </>
   );
 }

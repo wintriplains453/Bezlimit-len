@@ -8,9 +8,8 @@ const FormRequest = ({phoneData}) => {
 				<div className='logo_form'></div>
 				<div className='wrapper_content_form'>
 					<div className='PD_wrapper_title'>
-						<p className='you_phone_title'>Оставить заявку</p>
-						<p className='you_phone_title'>на оформление номера</p>
-						<p>{phoneData.number}</p>						
+						<p className='FS_title'>Оставить заявку на оформление номера</p>
+						<p className='phone_number_take'>{phoneData.number}</p>						
 					</div>
 
 					<div className='PD_border'>

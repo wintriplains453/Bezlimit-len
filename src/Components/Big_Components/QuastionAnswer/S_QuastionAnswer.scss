@@ -1,6 +1,7 @@
 @import 'src/g_variable.scss';
 
 .wrapper_quastion_answer {
+    padding: 30px;
     min-height: 100vh;
     background: #EEEEEE;
     display: flex;
@@ -19,6 +20,9 @@
         height: 50px;
         transform: rotate(180deg);
     }
+}
+.main_Header_Box_title {
+    margin: 20px;
 }
 .QA_title {
     width: 100%;
@@ -47,7 +51,7 @@
 }
   
 .accordion_button {
-    font-size: size_mode(.8);
+    font-size: 1.3rem;
     background-color: #fff;
     color: #000;
     text-align: left;
@@ -69,10 +73,8 @@
 .answer {
     background-color: #fff;
     padding: 20px;
-    font-size: size_mode(.7);
-    font-weight: 300;
-    font-family: TildaSans, Arial, sans-serif;
-    color: #707070;
+    font-size: 1rem;
+    color: #000;
     ul {
         padding-left: 20px;
     }
@@ -91,7 +93,7 @@
     margin-bottom: 20px;
 }
 .accordion_control {
-    font-size: size_mode(1.2);
+    font-size: 1.3rem;
     transition: .2s;
     display: flex;
     justify-content: center;
@@ -102,5 +104,52 @@
         background: #6833AD;
         color: #fff;
         transform: rotateZ(45deg);
+    }
+}
+@media screen and (max-width: 1300px) {
+    .accordion_button {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .accordion {
+        max-width: 90%;
+    }
+    .main_Header_Box_title {
+        text-align: center;
+    }
+    .accordion_button {
+        font-size: 1rem;
+    }
+    .answer {
+        font-size: .9rem;
+    }
+    .wrapper_quastion_answer {
+        &:before {
+            display: none;
+        }
+        &:after {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .accordion {
+        max-width: 100%;
+    }
+    .answer {
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .accordion_button {
+        font-size: .8rem;
+        padding: 25px 10px;
+        p {
+            max-width: 80%;
+        }
+    }
+    .answer {
+        font-size: .7rem;
     }
 }

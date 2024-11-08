@@ -9,7 +9,7 @@ import useOnScreen from '../../../Hooks/useOnScreen'
 //Scss
 import './S_Tarifs.scss'; 
 
-function Tarifs({tarifs, handlerTarifCard, handlerModalPayment}) { 
+function Tarifs({tarifs, handlerTarifCard}) { 
   
 
 	let app = useRef(null)
@@ -127,8 +127,7 @@ function Tarifs({tarifs, handlerTarifCard, handlerModalPayment}) {
                   <li>на просмотр видео в YouTube через официальное приложение.</li>
                 </ul>
                 <div className="wrapper_btns">
-                  <button className="btn customBtn" onClick={() => handlerTarifCard(null)}>Подобрать номер по тарифу</button>
-                  <button className="btn customBtn" onClick={handlerModalPayment}>как не платить за тариф</button>                  
+                  {/* <button className="btn customBtn" onClick={() => handlerTarifCard(null)}>Подобрать номер по тарифу</button> */}
                 </div>
 
               </div>
