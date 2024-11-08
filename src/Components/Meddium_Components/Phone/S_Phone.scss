@@ -4,22 +4,291 @@
     position: relative;
     height: 80vh;
     width: 40vh;
-}
-.phone__screen {
-    height: 98%;
-    background: #fff;
-    position: absolute;
-    width: 98%;
-    border-radius: 20%;
-    transform: translate(1%, 1%);
+    overflow: hidden;
+    z-index: 3;
 }
 .phone__area {
     background-image: url(../../../Assets/Images/area_phone.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;    
+    width: 100%;
+    height: 100%;
+    padding: calc((.9vw + .9vh));
+}
+.phone__area_screen {
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 2;
+    border-radius: calc((1.1vw + 1.1vh));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #7746BA;
+}
+.phone__area_wrapper {
+    height: 90%;
+}
+.loaderPhone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phone__bar_wrapper {
+    width: 100%;
+    height: 30px;    
+    background: $purple__opacity;
+    z-index: 3;
+    .phone__bar {
+        height: 100%;
+        background-image: url(../../../Assets/svg/status_bar.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 auto;
+    }
+}
+.phone__area_menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 50px;
+}
+.phone__area_menu_number, .phone__area_menu_tarif {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phone__area_menu p {
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .4s;
+    color: #000;
+    &:hover {
+        color: #4a4a4a;
+    }
+}
+.List_PhonesTarifs {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: linear-gradient(110deg, #7746BA,#8C48A3);
+    overflow-x: hidden;
+    color: #fff;
+    padding-bottom: 10px;
+}
+.List_PhonesTarifs::-webkit-scrollbar {
+    width: 4px;       
+}
+.List_PhonesTarifs::-webkit-scrollbar-thumb {
+    background-color: purple;
+}
+.item_phone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    .item_phone_flex {
+        margin-left: 10px;
+    }
+}
+.item_phone_number {
+    font-family: 'Ubunto_normal';
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+.item_phone_tarif { 
+    // opacity: .5;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #EFCE73;
+}
+.custom_item_button {
+    padding: 5px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 1.1rem;
+    margin-left: auto;
+    width: 90%;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        color: #EFCE73;
+        border: 1px solid #EFCE73;
+    }
+}
+.item_tarif_wrapper {
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2%;
+}
+.item_tarif {
+    width: 100%;
+    // transform: translateY(-50px);
+}
+.detail_item {
+    position: absolute;
+    border-top: 2px solid #fff;
+    background: rgba($color: #000000, $alpha: 0.3); 
+    width: 50%;
+    padding: 5px;   
+    cursor: pointer;
+    border-radius: 48%;
+    &:first-child {
+        transform: translateY(10px);
+    }
+}
+.detail_month {
+    font-size: .9rem;
+    text-align: center;
+}
+.detail_item_header {
+    font-size: 1.1rem;
+    text-align: center;
+}
+.flex_wrapper_detail {
+    display: flex;
+    justify-content: center;
+    .colomn_info_detail_header {
+        margin: 10px;
+        margin-bottom: 0px;
+        font-size: 1rem;
+    }
+}
+.wrapper_delivery { 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid $gold;
+    margin: 10px;
+    .delivery_header {
+        font-size: 1.3rem;
+    }
+    .delivery_content {
+        margin: 10px 0;
+    }
+    .customDelivery {
+        padding: 8px;
+        width: 50%;
+    }
+}
+.colomn_info_detail p{
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: .7rem;
+    text-align: center;
+}
+
+
+.bottom_wrapper_phone {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 15px 0;
+    background: #7746BA;
+    width: 100%;
+    max-height: 100px;
+}
+.customBTN {
+    padding: 8px 20%;
+    font-size: 1.2rem;
+}
+//height media
+@media screen and (max-height: 1000px) {
+    .phone__area_menu {
+        height: 35px;
+        padding: 0px;
+    }    
+}
+@media screen and (max-height: 800px) {
+    .customBTN {
+        padding: 5px 8px;
+        font-size: .9rem;
+    }   
+}
+@media screen and (max-height: 750px) {
+    .custom_item_button {
+        width: 100%;
+    }
+}
+@media screen and (max-height: 900px) {
+    .wrapper_delivery {
+        padding: 0;
+        padding-bottom: 8px;
+        border: none;
+        border-bottom: 1px solid $gold;
+    }
+    .wrapper_delivery .delivery_header {
+        font-size: 1rem;
+    }
+    .wrapper_delivery .delivery_content {
+        font-size: .8rem;
+    }
+    .wrapper_delivery .customDelivery {
+        padding: 5px;
+    }
+}
+
+
+@media screen and (max-width: 1600px) {
+    .item_phone_number {
+        font-size: 1rem;
+    }
+    .item_phone_tarif {
+        font-size: .8rem;
+    }
+    .custom_item_button {
+        font-size: .87rem;
+    }
+    .phone__area_menu p {
+        font-size: 1rem;
+    }
+    .item_phon {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .phone__area {
+        padding: 18px;
+    }
+    .phone__area_screen {
+        border-radius: 25px;
+    }
+    .List_PhonesTarifs {
+        overflow: auto;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .phone__wrapper {
+        height: 90vh;
+        width: 45vh;
+    }
+
+}
+@media screen and (max-width: 400px) {
+    .phone__area {
+        padding: 20px;
+    }
+    .phone__area_screen {
+        border-radius: 30px;
+    }
 }

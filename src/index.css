@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ubunto_normal';
+  font-style: normal;
+  font-weight: normal;
+  src: url(./Fonts/Ubuntu-Medium.ttf);
+}
+
 * {
   margin: 0;
   padding: 0; 
@@ -5,16 +12,94 @@
 }
 html, body, #root{
   height: 100%;
+  /* overflow-x: hidden; */
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Ubunto_normal, sans-serif;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 8px;       
+  background: #000;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn {
+  background: linear-gradient(45deg, #D4C897,#AB9C5E, #D4C897);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #000;
+  transition: .8s;
+  font-weight: 100 !important;
+}
+.btn:hover {
+  transition: .4s;
+  color: #fff; 
+}
+
+.LineDefault {
+  width: 1px;
+  position: absolute;
+  left: 27px;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  opacity: .3;
+  z-index: 3;
+}
+.main_Header_Box_title {
+  font-size: 4rem;
+  font-family: 'FuturaPT';
+  text-transform: uppercase;
+  background: linear-gradient(141.08deg,#cbad59 25.79%,#cabc85 63.66%,#b58f56 97.07%);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.iconsCloser {
+  font-size: 40px;
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  color: #ff5d5d;
+}
+.attention {
+  color: #ff5d5d;
+}
+@media screen and (max-width: 1600px)  {
+  .LineDefault {
+    width: 0.07;
+  }
+}
+
+@media screen and (max-width: 1024px)  {
+  .LineDefault {
+    width: 0;
+  }
+  .main_Header_Box_title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 650px)  {
+  .main_Header_Box_title {
+    text-align: center;
+    font-size: 2.4rem; 
+  }
+}
+@media screen and (max-width: 425px)  {
+  .main_Header_Box_title {
+    font-size: 2rem;
+  }
 }

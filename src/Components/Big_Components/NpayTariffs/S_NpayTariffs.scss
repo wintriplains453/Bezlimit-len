@@ -1,0 +1,134 @@
+@import 'src/g_variable.scss';
+
+.NpayTariffs__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url(../../../Assets/Images/npayt_bakground.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+      background: rgba($color: #9888AD, $alpha: 0.3);
+      width: 100%;
+      height: 50px;
+      transform: rotate(180deg);
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        clip-path: polygon(0 0, 100% 74%, 100% 100%, 0% 100%);
+        background: rgba($color: #9888AD, $alpha: 0.3);
+        width: 100%;
+        height: 50px;
+    }
+}
+
+.black_screen_nptarif {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($color: #000000, $alpha: 0.7);
+}
+.wrapper__aymentModal {
+    max-width: 90%;
+    height: 100%;
+    z-index: 11;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+    .main_Header_Box_title {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+.MP_margin {
+    margin: 20px 0;
+    p {
+        font-weight: bold;
+    }
+}
+.modalBTNTarif {
+    margin-top: 45px;
+}
+.np_title {
+    font-size: 1.5rem !important;
+    color: $gold;
+    padding: 2px;
+}
+.special_title_np {
+    text-align: center;
+    color: $gold;
+}
+.main_wrapper_card {
+    max-width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 40px;
+}
+.wrapper_card {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    overflow: auto;
+    align-items: center;
+    background: rgba($color: $purple__opacity, $alpha: .75);
+    flex-direction: column;
+    padding: 5px 15px;
+}
+
+@media screen and (max-width: 1300px)  {
+    .main_wrapper_card {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1024px)  {
+    .NpayTariffs__wrapper {
+        &::before {
+            display: none;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    .wrapper__aymentModal {
+        max-width: 100%;
+    }
+    .wrapper_card {
+        max-height: 300px;
+    }
+}
+@media screen and (max-width: 1024px)  {
+    .wrapper_card {
+        text-align: center;
+        max-height: 200px;
+    }
+    .main_wrapper_card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .wrapper__aymentModal p {
+        font-size: .9rem !important;
+    }
+}
