@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/wintriplains453/Bezlimit-len.git/static/css/main.2de63fd1.css",
-    "main.js": "/wintriplains453/Bezlimit-len.git/static/js/main.8d2edaa8.js",
-    "static/media/bezlimit_video2.mp4": "/wintriplains453/Bezlimit-len.git/static/media/bezlimit_video2.bfaa41919c885a3a1f72.mp4",
-    "static/media/job_third.jpg": "/wintriplains453/Bezlimit-len.git/static/media/job_third.1a089b5bf3a557683d2d.jpg",
-    "static/media/tarif.jpg": "/wintriplains453/Bezlimit-len.git/static/media/tarif.7b01dbb434bc26690148.jpg",
-    "static/media/job_second.jpg": "/wintriplains453/Bezlimit-len.git/static/media/job_second.829ce0e012a527fdead0.jpg",
-    "static/media/phone_mobile.png": "/wintriplains453/Bezlimit-len.git/static/media/phone_mobile.b649d0cb6105d1414bcf.png",
-    "static/media/logo_header.png": "/wintriplains453/Bezlimit-len.git/static/media/logo_header.a7e7038cf45517a837e6.png",
-    "static/media/background_form.jpg": "/wintriplains453/Bezlimit-len.git/static/media/background_form.c426b91fcef09353f05e.jpg",
-    "static/media/Ubuntu-Medium.ttf": "/wintriplains453/Bezlimit-len.git/static/media/Ubuntu-Medium.c1e5c21a326905f47434.ttf",
-    "static/media/Ubuntu-Bold.ttf": "/wintriplains453/Bezlimit-len.git/static/media/Ubuntu-Bold.995358969571c1c37362.ttf",
-    "static/media/area_phone.png": "/wintriplains453/Bezlimit-len.git/static/media/area_phone.8a5e74c6ddf58768104c.png",
-    "static/media/FuturaPT-ExtraBold.ttf": "/wintriplains453/Bezlimit-len.git/static/media/FuturaPT-ExtraBold.3b1f0d985f3a242b6a56.ttf",
-    "static/media/npayt_bakground.jpeg": "/wintriplains453/Bezlimit-len.git/static/media/npayt_bakground.cea25702589fb4500075.jpeg",
-    "static/media/logo.svg": "/wintriplains453/Bezlimit-len.git/static/media/logo.d4e8cf1c02a2f18abd0e.svg",
-    "static/media/status_bar.svg": "/wintriplains453/Bezlimit-len.git/static/media/status_bar.18c52dd42bcd0c8eba63.svg",
-    "index.html": "/wintriplains453/Bezlimit-len.git/index.html",
-    "main.2de63fd1.css.map": "/wintriplains453/Bezlimit-len.git/static/css/main.2de63fd1.css.map",
-    "main.8d2edaa8.js.map": "/wintriplains453/Bezlimit-len.git/static/js/main.8d2edaa8.js.map"
+    "main.css": "/Bezlimit-len.git/static/css/main.7291c460.css",
+    "main.js": "/Bezlimit-len.git/static/js/main.5755027f.js",
+    "static/media/bezlimit_video2.mp4": "/Bezlimit-len.git/static/media/bezlimit_video2.bfaa41919c885a3a1f72.mp4",
+    "static/media/job_third.jpg": "/Bezlimit-len.git/static/media/job_third.1a089b5bf3a557683d2d.jpg",
+    "static/media/tarif.jpg": "/Bezlimit-len.git/static/media/tarif.7b01dbb434bc26690148.jpg",
+    "static/media/job_second.jpg": "/Bezlimit-len.git/static/media/job_second.829ce0e012a527fdead0.jpg",
+    "static/media/phone_mobile.png": "/Bezlimit-len.git/static/media/phone_mobile.b649d0cb6105d1414bcf.png",
+    "static/media/logo_header.png": "/Bezlimit-len.git/static/media/logo_header.a7e7038cf45517a837e6.png",
+    "static/media/background_form.jpg": "/Bezlimit-len.git/static/media/background_form.c426b91fcef09353f05e.jpg",
+    "static/media/Ubuntu-Medium.ttf": "/Bezlimit-len.git/static/media/Ubuntu-Medium.c1e5c21a326905f47434.ttf",
+    "static/media/Ubuntu-Bold.ttf": "/Bezlimit-len.git/static/media/Ubuntu-Bold.995358969571c1c37362.ttf",
+    "static/media/area_phone.png": "/Bezlimit-len.git/static/media/area_phone.8a5e74c6ddf58768104c.png",
+    "static/media/FuturaPT-ExtraBold.ttf": "/Bezlimit-len.git/static/media/FuturaPT-ExtraBold.3b1f0d985f3a242b6a56.ttf",
+    "static/media/npayt_bakground.jpeg": "/Bezlimit-len.git/static/media/npayt_bakground.cea25702589fb4500075.jpeg",
+    "static/media/logo.svg": "/Bezlimit-len.git/static/media/logo.d4e8cf1c02a2f18abd0e.svg",
+    "static/media/status_bar.svg": "/Bezlimit-len.git/static/media/status_bar.18c52dd42bcd0c8eba63.svg",
+    "index.html": "/Bezlimit-len.git/index.html",
+    "main.7291c460.css.map": "/Bezlimit-len.git/static/css/main.7291c460.css.map",
+    "main.5755027f.js.map": "/Bezlimit-len.git/static/js/main.5755027f.js.map"
   },
   "entrypoints": [
-    "static/css/main.2de63fd1.css",
-    "static/js/main.8d2edaa8.js"
+    "static/css/main.7291c460.css",
+    "static/js/main.5755027f.js"
   ]
 }
