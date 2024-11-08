@@ -1,7 +1,7 @@
 {
   "name": "bezlimit-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/wintriplains453/Bezlimit-len.git",
+  "homepage": "https://wintriplains453.github.io/Bezlimit-len.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

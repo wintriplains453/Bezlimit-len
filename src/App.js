@@ -139,11 +139,6 @@ function App() {
     setModal_data(item)
     setModalRender(item.id)
   }
-  function selectRegion(item) {
-    setRegionItem(item)
-    setIsRegion(!is_region)
-    setScreenRegion(!screenRegion)
-  }
   function hendlerScreenReg() {
     setIsRegion(!is_region)
     setScreenRegion(!screenRegion)
