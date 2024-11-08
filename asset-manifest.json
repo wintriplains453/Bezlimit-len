@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bezlimit-len.git/static/css/main.7291c460.css",
-    "main.js": "/Bezlimit-len.git/static/js/main.2be2f2e8.js",
+    "main.js": "/Bezlimit-len.git/static/js/main.cfda4d4f.js",
     "static/media/bezlimit_video2.mp4": "/Bezlimit-len.git/static/media/bezlimit_video2.bfaa41919c885a3a1f72.mp4",
     "static/media/job_third.jpg": "/Bezlimit-len.git/static/media/job_third.1a089b5bf3a557683d2d.jpg",
     "static/media/tarif.jpg": "/Bezlimit-len.git/static/media/tarif.7b01dbb434bc26690148.jpg",
@@ -18,10 +18,10 @@
     "static/media/status_bar.svg": "/Bezlimit-len.git/static/media/status_bar.18c52dd42bcd0c8eba63.svg",
     "index.html": "/Bezlimit-len.git/index.html",
     "main.7291c460.css.map": "/Bezlimit-len.git/static/css/main.7291c460.css.map",
-    "main.2be2f2e8.js.map": "/Bezlimit-len.git/static/js/main.2be2f2e8.js.map"
+    "main.cfda4d4f.js.map": "/Bezlimit-len.git/static/js/main.cfda4d4f.js.map"
   },
   "entrypoints": [
     "static/css/main.7291c460.css",
-    "static/js/main.2be2f2e8.js"
+    "static/js/main.cfda4d4f.js"
   ]
 }
